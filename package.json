@@ -1,0 +1,16 @@
+{
+  "name": "seguristore",
+  "version": "1.0.0",
+  "description": "Pagina web de implementos de seguridad industrial",
+  "main": "gulpfile.js",
+  "keywords": [
+    "seguridad",
+    "industrial"
+  ],
+  "author": "Joshua",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1"
+  }
+}

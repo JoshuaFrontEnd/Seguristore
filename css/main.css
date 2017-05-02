@@ -1,0 +1,13 @@
+html{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p{
+    color: orangered;
+    background: cadetblue;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    top: 100px;
+    position: relative;
+}
