@@ -21,23 +21,34 @@ a{
     position: absolute;
     z-index: 9999;
     top: 0;
-    /*line-height: 70px;*/
+    /* line-height: 70px; */
     width: 96%;
     padding: 0 2%;
-
     /*opacity: .5;*/
-    /*background: red;*/
+    /*background: red;'0p´ñ0'p'´0po9o'´0-*/
+}
+
+.mainHeader_logo_imgLogo{
+  width: 70px;
+  margin: 10px 20px 10px 0;
+  float: left;
+}
+
+.mainHeader_logo_title{
+  float:left;
+  margin: 26px 0 0 0;
+  color: #074a8e;
 }
 
 .mainHeader_nav{
     float: right;
-    margin-top: 33px;
+    margin-top: 39px;
 }
 
 .mainBanner{
     max-width: 100%;
     height: 100%;
-    background: url(../img/bgMainBanner.jpg);
+    background: url(../img/bgMainBanner2.jpg);
     background-size: cover;
     overflow: hidden;
 }
@@ -69,6 +80,6 @@ a{
     text-align: center;
 }
 
-.inlineBlock{
-    display: inline-block;
-}
+/*.inlineBlock{
+     display: inline-block; 
+}*/
