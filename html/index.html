@@ -4,29 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/manifest.json">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="SeguriStore">
+    <meta name="application-name" content="SeguriStore">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <!-- Definir color Chrome Android -->
+    <meta name="theme-color" content="#ffffff">
+
     <title>SeguriStore, te implementa!!</title>
+
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
 </head>
 <body>
 
+    <div class="headerBgTop headerBgHeight hide768"></div>
+
     <header class="mainHeader">
 
-        <div class="mainHeader_logo">
-             <img class="mainHeader_logo_imgLogo" src="img/logo.png" alt="SeguriStore"> 
-            <h1 class="mainHeader_logo_title">SeguriStore</h1>
+        <div class="wrapper">
+
+            <div class="mainHeader_logo">
+                    <img class="mainHeader_logo_imgLogo" src="img/logo.png" alt="SeguriStore">
+                    <h1 class="mainHeader_logo_title">SeguriStore</h1>
+            </div>
+
+            <button class="hide1024 btnMostrarMenu">mostrar menu</button>
+
+            <nav class="mainHeader_nav">
+                <a class="activeNav hide768" href="#mainBanner" title="Inicio">Inicio</a>
+                <a class="nosotros" href="#dos" title="Nosotros">Nosotros</a>
+                <a href="#tres" title="Productos">Productos</a>
+                <a href="#mainFooter" title="Contacto">Contacto</a>
+            </nav>
+
+
         </div>
 
-        <nav class="mainHeader_nav">
-            <a href="#mainBanner">Uno</a>
-            <a href="#dos">Dos</a>
-            <a href="#tres">Tres</a>
-            <a href="#">lorem</a>
-            <a href="#">lorem</a>
-        </nav>
-        
     </header>
+
+    <div class="headerBgBottom headerBgHeight hide768"></div>
 
     <section id="mainBanner" class="mainBanner">
 
@@ -34,21 +58,37 @@
 
             <h2 class="textCenter mainBanner_mainText">Bienvenido a SeguriStore</h2>
             <h3 class="textCenter mainBanner_secondText">Los mejores productos a los mejores precios, cotiza con nosotros, SeguriStore te implementa!!</h3>
-        
+
         </div>
+
+        <a class="buttonArrow" href="#dos" title="nombreSeccionDos">nombreSeccionDos</a>
 
     </section>
 
-    <section id="dos" style="height: 800px; background: red;">dos</section>
+    <section id="dos" class="dev">dos</section>
 
-    <section id="tres" style="height: 800px; background: blue;">tres</section>
+    <section id="tres" class="dev dev2">tres</section>
 
-    <footer class="mainFooter">
+    <footer id="mainFooter" class="dev dev3">
+
+        <form id="formularioContacto" action="#" method="POST">
+
+            <label for="cNom">
+                <input id="cNom" name="cNom" placeholder="Nombre" type="text" value="" class="input cReq" size="30" required />
+            </label>
+
+            <label for="cMai">
+                <input id="cMai" name="cMai" placeholder="Correo Electrónico" type="text" value="" class="input cReq" size="30" required />
+            </label>
+
+            <input id="btEnv" type="submit" value="Enviar" class="btn btn-form" />
+
+        </form>
 
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    
+
 </body>
 </html>
