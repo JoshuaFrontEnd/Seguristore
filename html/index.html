@@ -39,7 +39,7 @@
             <button class="hide1024 btnMostrarMenu">mostrar menu</button>
 
             <nav class="mainHeader_nav">
-                <a class="activeNav hide768" href="#mainBanner" title="Inicio">Inicio</a>
+                <!-- <a class="activeNav hide768" href="#mainBanner" title="Inicio">Inicio</a> -->
                 <a class="nosotros" href="#dos" title="Nosotros">Nosotros</a>
                 <a href="#tres" title="Productos">Productos</a>
                 <a href="#mainFooter" title="Contacto">Contacto</a>
@@ -71,17 +71,19 @@
 
     <footer id="mainFooter" class="dev dev3">
 
-        <form id="formularioContacto" action="#" method="POST">
+        <form id="formularioContacto" method="POST" enctype="multipart/form-data">
 
-            <label for="cNom">
-                <input id="cNom" name="cNom" placeholder="Nombre" type="text" value="" class="input cReq" size="30" required />
+            <label for="nombre">
+                <input id="nombre" name="nombre" placeholder="Nombre" type="text" value="" class="input cReq" size="30" required />
             </label>
 
-            <label for="cMai">
-                <input id="cMai" name="cMai" placeholder="Correo Electrónico" type="text" value="" class="input cReq" size="30" required />
+            <label for="email">
+                <input id="email" name="email" placeholder="Correo Electrónico" type="text" value="" class="input cReq" size="30" required />
             </label>
 
-            <input id="btEnv" type="submit" value="Enviar" class="btn btn-form" />
+            <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+
+            <input id="btnSubmit" type="submit" value="Enviar" class="btn btn-form" />
 
         </form>
 
@@ -89,6 +91,52 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+
+    <script>
+    $("#btnSubmit").click(function (event) {
+
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+
+        // Get form
+        var form = $('#formularioContacto')[0];
+
+        // Create an FormData object
+        var data = new FormData(form);
+
+        // If you want to add an extra field for the FormData
+        data.append("CustomField", "This is some extra data, testing");
+
+        // disabled the submit button
+        $("#btnSubmit").prop("disabled", true);
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "contacto.php",
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+
+                // $("#result").text(data);
+                console.log("SUCCESS : ", data);
+                $("#btnSubmit").prop("disabled", false);
+
+            },
+            error: function (e) {
+
+                // $("#result").text(e.responseText);
+                console.log("ERROR : ", e);
+                $("#btnSubmit").prop("disabled", false);
+
+            }
+        });
+
+    });
+    </script>
 
 </body>
 </html>

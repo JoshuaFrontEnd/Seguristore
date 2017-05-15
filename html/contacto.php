@@ -1,31 +1,35 @@
 <?php
 //validar formulario
 
-	if($_POST){
+	// if($_POST){
 
 		$nombre = $_POST["nombre"];
 
 		$email = $_POST["email"];
 
-		$claseNombre = "";
+		echo "$nombre";
 
-		$claseEmail = "";
+		echo "$email";
 
-		if($nombre == ""){
+		// $claseNombre = "";
 
-			$msgNombre = "Ingrese un Nombre";
+		// $claseEmail = "";
 
-			$claseNombre = "error";}
+		// if($nombre == ""){
 
-		if(!eregi("^([_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-z0-9-]+)*(\.[a-z]{2,4})$",$email)){
+		// 	$msgNombre = "Ingrese un Nombre";
 
-			$msgEmail = "Ingrese un Email valido";
+		// 	$claseNombre = "error";}
 
-			$claseEmail = "error";
+		// if(!eregi("^([_a-z0-9-]+)(\.[_a-z0-9-]+)*@([a-z0-9-]+)(\.[a-z0-9-]+)*(\.[a-z]{2,4})$",$email)){
 
-			$email = "";}
+		// 	$msgEmail = "Ingrese un Email valido";
 
-		if($claseNombre == "" && $claseEmail == ""){
+		// 	$claseEmail = "error";
+
+		// 	$email = "";}
+
+		// if($claseNombre == "" && $claseEmail == ""){
 
 		//funcion mail para enviar los datos del formulario
 		$mensaje="Mensaje nuevo desde el formulario de contacto de www.seguristore.cl";
@@ -36,7 +40,9 @@
 
 		$mensaje.= "\n\nMensaje: \n\n".$_POST['mensaje'];
 
-		$destino= "contacto@seguristore.cl", "hola@joshua.cl";
+		// $destino = "contacto@seguristore.cl", "hola@joshua.cl";
+
+		$destino = "hola@joshua.cl, contacto@seguristore.cl";
 
 		$remitente = $_POST['email'];
 
@@ -44,12 +50,14 @@
 
 		mail($destino,$asunto,$mensaje,"FROM: $remitente");
 
-		$nombre = "";
+		// $nombre = "";
 
-		$email = "";
+		// $email = "";
 
-		$mensaje = "Muchas gracias su mensaje ha sido enviado, le responderemos a la brevedad.";
+		// $mensaje = "Muchas gracias su mensaje ha sido enviado, le responderemos a la brevedad.";
 
-	}
+	// }
 
-}?>
+?>
+
+

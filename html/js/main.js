@@ -101,21 +101,22 @@ $(window).on('load resize', function(){
 
     }
 
-    if(anchoVentana >= 768 ){
-        $('.mainHeader').removeClass('active');
-        $('.mainHeader_nav').removeClass('active center');
+    // if(anchoVentana >= 768 ){
+    //     $('.mainHeader').removeClass('active');
+    //     $('.mainHeader_nav').removeClass('active center');
 
-    }
-
-});
-
-
-$('.btnMostrarMenu').on('click', function(e) {
-e.preventDefault();
-
-    console.log('click');
-
-    $('.mainHeader').toggleClass('active');
-    $('.mainHeader_nav').toggleClass('center active');
+    // }
 
 });
+
+
+// $('.btnMostrarMenu').on('click', function(e) {
+// e.preventDefault();
+
+//     console.log('click');
+
+//     $('.mainHeader').toggleClass('active');
+//     $('.mainHeader_nav').toggleClass('center active');
+
+// });
+

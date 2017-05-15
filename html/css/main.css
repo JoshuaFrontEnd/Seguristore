@@ -7,7 +7,7 @@ html{
 
 body{
     margin: 0 auto;
-    background: url(../img/bgBody.jpg) no-repeat center fixed;
+    /*background: url(../img/bgBody.jpg) no-repeat center fixed;*/
     background-size: cover;
     /*display: none;*/
 }
@@ -85,9 +85,6 @@ a{
     transition: color .3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.mainHeader_nav a:hover, .activeNav{
-  color: #ffc229;
-}
 
 .activeNav{
     cursor: default;
@@ -173,7 +170,9 @@ a{
     height: 100%;
     max-width: 1920px;
     min-width: 320px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0 2%;
+    box-sizing: border-box;
     position: relative;
 }
 
@@ -211,15 +210,13 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav{
 
 @media ( max-width: 768px ){
 
-    .mainHeader{
+/*    .mainHeader{
       position: absolute;
       height: 100%;
       background: rgba(255,194,41,0);
       will-change: background;
       transition: background .3s ease-in-out;
       pointer-events: none;
-
-/*       border: 10px solid red; */
     }
 
     .mainHeader.active{
@@ -253,10 +250,6 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav{
         transform: translate(-50%, -50%);
     }
 
-/*     .mainHeader_nav.active{
-        transition: transform .6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    } */
-
     .mainHeader_nav.active{
       opacity: 1;
       pointer-events: initial;
@@ -270,8 +263,6 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav{
         width: 100%;
         text-align: center;
         box-sizing: border-box;
-        /*color: #074a8e;*/
-        /* pointer-events: initial; */
     }
 
     .mainHeader_nav a:hover, .activeNav{
@@ -280,6 +271,6 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav{
 
     .hide768{
         display: none !important;
-    }
+    }*/
 
 }
