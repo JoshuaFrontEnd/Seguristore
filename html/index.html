@@ -21,15 +21,19 @@
 
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind:500,700&amp;subset=latin-ext">
 </head>
 <body>
+
+    <!--[if IE]>
+        <p class="browserupgrade">Estas usando un navegador <strong>OBSOLETO E INSEGURO</strong>. Por favor actualizalo <a href="http://browsehappy.com/" style="color: yellow;"> <strong>AQUÍ</strong> </a> para mejorar tu experiencia y seguridad.</p>
+    <![endif]-->
 
     <div class="headerBgTop headerBgHeight hide768"></div>
 
     <header class="mainHeader">
 
-        <div class="wrapper">
+        <div class="wrapper wrapperHeader">
 
             <div class="mainHeader_logo">
                     <img class="mainHeader_logo_imgLogo" src="img/logo.png" alt="SeguriStore">
@@ -39,7 +43,7 @@
             <button class="hide1024 btnMostrarMenu">mostrar menu</button>
 
             <nav class="mainHeader_nav">
-                <!-- <a class="activeNav hide768" href="#mainBanner" title="Inicio">Inicio</a> -->
+                <a class="hidden" href="#mainBanner" title="Inicio">Inicio</a>
                 <a class="nosotros" href="#dos" title="Nosotros">Nosotros</a>
                 <a href="#tres" title="Productos">Productos</a>
                 <a href="#mainFooter" title="Contacto">Contacto</a>
@@ -56,8 +60,21 @@
 
         <div class="center">
 
-            <h2 class="textCenter mainBanner_mainText">Bienvenido a SeguriStore</h2>
-            <h3 class="textCenter mainBanner_secondText">Los mejores productos a los mejores precios, cotiza con nosotros, SeguriStore te implementa!!</h3>
+            <h2 class="textCenter mainBanner_mainText">Bienvenido a <br> <span class="seguristore">SeguriStore</span></h2>
+            <!-- <h3 class="textCenter mainBanner_secondText">Los mejores productos a los mejores precios, cotiza con nosotros, SeguriStore te implementa!!</h3> -->
+            <h3 class="textCenter mainBanner_secondText">Elementos de Protección Personal</h3>
+            <h3 class="textCenter mainBanner_secondText">Cotiza con nosotros</h3>
+
+
+            <!-- Buscar la opcion de cambiar el mensaje de bienvenida algo asi como: Si necesitas implementos de seguridad industrial, has llegado al lugar adeacuado -->
+
+            <!-- Agregar boton de contactanos que lleve al formulario -->
+
+            <!-- Agregar redes sociales -->
+
+            <!-- Ver la opcion de que en el menu dejar el logo sin tipografia y en el banner el logo completo -->
+
+            <!-- Quizas el fondo de la pagina podria ser un patron de objetos vectorizado como este ejemplo https://www.misscupcakes.pe/ -->
 
         </div>
 
@@ -65,78 +82,98 @@
 
     </section>
 
-    <section id="dos" class="dev">dos</section>
+    <section id="dos" class="dev">
+
+        <!-- Un formato decente para NOSOTROS http://spjstudio.cl/web/ -->
+
+    </section>
 
     <section id="tres" class="dev dev2">tres</section>
 
-    <footer id="mainFooter" class="dev dev3">
+    <footer id="mainFooter" class="mainFooter">
 
-        <form id="formularioContacto" method="POST" enctype="multipart/form-data">
+        <div class="stripes"></div>
 
-            <label for="nombre">
-                <input id="nombre" name="nombre" placeholder="Nombre" type="text" value="" class="input cReq" size="30" required />
-            </label>
+        <div class="wrapper wrapperFooter">
 
-            <label for="email">
-                <input id="email" name="email" placeholder="Correo Electrónico" type="text" value="" class="input cReq" size="30" required />
-            </label>
+            <section class="formInfo columnForm">
 
-            <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+<!--                 <p class="formInfo-p">Contáctenos completando el siguiente formulario o también puede hacerlo a través de nuestro correo electrónico y teléfono, visítenos en Instagram y Facebook.</p>
+ -->
+<!--                 <ul class="formInfoLista">
+                    <li><a href="mailto:contacto@seguristore.cl" alt="Correo Electronico" title="Correo Electronico">contacto@seguristore.cl</a></li>
+                    <li><a href="tel:+56989258592" alt="Telefono" title="Telefono">+569 89258592</a></li>
+                </ul> -->
 
-            <input id="btnSubmit" type="submit" value="Enviar" class="btn btn-form" />
+                <p class="devtitle-b">Correo Electronico</p>
 
-        </form>
+                <p class="devtitle-c">contacto@seguristore.cl</p>
+
+                <p class="devtitle-b">Teléfono</p>
+
+                <p class="devtitle-c">+569 89258592</p>
+
+            </section>
+
+            <form id="contactForm" class="contactForm columnForm" method="POST" enctype="multipart/form-data">
+
+                <p class="devtitle">Contáctanos</p>
+
+                <label for="nombre">
+                    <input id="nombre" name="nombre" placeholder="Nombre" type="text" value="" class="inputForm cReq" size="30"/>
+                </label>
+
+                <label for="email">
+                    <input id="email" name="email" placeholder="Email" type="text" value="" class="inputForm cReq" size="30"/>
+                </label>
+
+                <textarea class="textareaForm" name="mensaje" id="" placeholder="Mensaje" cols="30" rows="10"></textarea>
+
+                <input id="btnSubmit" type="submit" value="Enviar" title="Enviar" class="btn-form inputForm" />
+
+            </form>
+
+        </div>
+
+        <div class="mainFooter-info">
+
+            <ul class="formInfoLista inline">
+                <li>
+                    <a class="mainFooter-info-icons" href="https://www.facebook.com/seguristore/" alt="Facebook" title="Facebook" target="_blank">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16">
+                            <title>facebook</title>
+                            <path d="M9.5 3h2.5v-3h-2.5c-1.93 0-3.5 1.57-3.5 3.5v1.5h-2v3h2v8h3v-8h2.5l0.5-3h-3v-1.5c0-0.271 0.229-0.5 0.5-0.5z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a class="mainFooter-info-icons" href="https://www.instagram.com/seguristore/" alt="Instagram" title="Instagram" target="_blank">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16">
+                            <title>instagram</title>
+                            <path d="M14.5 0h-13c-0.825 0-1.5 0.675-1.5 1.5v13c0 0.825 0.675 1.5 1.5 1.5h13c0.825 0 1.5-0.675 1.5-1.5v-13c0-0.825-0.675-1.5-1.5-1.5zM11 2.5c0-0.275 0.225-0.5 0.5-0.5h2c0.275 0 0.5 0.225 0.5 0.5v2c0 0.275-0.225 0.5-0.5 0.5h-2c-0.275 0-0.5-0.225-0.5-0.5v-2zM8 5c1.656 0 3 1.344 3 3s-1.344 3-3 3c-1.656 0-3-1.344-3-3s1.344-3 3-3zM14 13.5v0c0 0.275-0.225 0.5-0.5 0.5h-11c-0.275 0-0.5-0.225-0.5-0.5v0-6.5h1.1c-0.066 0.322-0.1 0.656-0.1 1 0 2.762 2.237 5 5 5s5-2.238 5-5c0-0.344-0.034-0.678-0.1-1h1.1v6.5z"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+            <p>SeguriStore SPA 2017 - Todos los derechos reservados</p>
+
+        </div>
+
+        <!-- Acá también podrían ir las redes sociales -->
+
+        <!-- Tambien podria ir el menu -->
+
+        <!-- Tambien podria ir el logo de seguristore -->
+
+        <!-- Agregar un enlace a mi sitio como desarrollador de la pagina -->
+
+        <!-- Quizas hacer el footer como aca http://lamoulade.com/#!/contact aunque este formato tambien se ve bueno http://www.richdean.co.uk/-->
 
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-
-    <script>
-    $("#btnSubmit").click(function (event) {
-
-        //stop submit the form, we will post it manually.
-        event.preventDefault();
-
-        // Get form
-        var form = $('#formularioContacto')[0];
-
-        // Create an FormData object
-        var data = new FormData(form);
-
-        // If you want to add an extra field for the FormData
-        data.append("CustomField", "This is some extra data, testing");
-
-        // disabled the submit button
-        $("#btnSubmit").prop("disabled", true);
-
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: "contacto.php",
-            data: data,
-            processData: false,
-            contentType: false,
-            cache: false,
-            timeout: 600000,
-            success: function (data) {
-
-                // $("#result").text(data);
-                console.log("SUCCESS : ", data);
-                $("#btnSubmit").prop("disabled", false);
-
-            },
-            error: function (e) {
-
-                // $("#result").text(e.responseText);
-                console.log("ERROR : ", e);
-                $("#btnSubmit").prop("disabled", false);
-
-            }
-        });
-
-    });
-    </script>
 
 </body>
 </html>

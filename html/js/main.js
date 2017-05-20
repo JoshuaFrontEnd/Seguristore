@@ -17,6 +17,9 @@ $(window).on('load resize', function(){
     // Tomo la altura del header y se la agrego a los fondos del mismo
     $('.headerBgHeight').outerHeight(mainHeaderH);
 
+    $('#mainFooter').css('padding-top', mainHeaderH);
+    $('.stripes').css('top', mainHeaderH);
+
     $(document).on('scroll', onScroll);
 
     linkNav.on('click', function(e) {
@@ -28,7 +31,15 @@ $(window).on('load resize', function(){
 
     });
 
-    $(document).on('click scroll', function(e) {
+    // $(document).on('click scroll', function(e) {
+    //     e.preventDefault();
+
+    //     var scrollPos = $(document).scrollTop();
+    //     replaceColorNav(scrollPos);
+
+    // });
+
+    $(document).on('scroll', function(e) {
         e.preventDefault();
 
         var scrollPos = $(document).scrollTop();
@@ -95,8 +106,10 @@ $(window).on('load resize', function(){
 
         if (scrollPos >= (mainBannerH - 60) ){
             mainHeaderNav.find('a').addClass('replaceColorNav');
+            mainHeaderNav.find('a.hidden').addClass('visible');
         }else{
             mainHeaderNav.find('a').removeClass('replaceColorNav');
+            mainHeaderNav.find('a.visible').removeClass('visible');
         }
 
     }
@@ -119,4 +132,79 @@ $(window).on('load resize', function(){
 //     $('.mainHeader_nav').toggleClass('center active');
 
 // });
+
+// VALIDACION FORMULARIO
+;(function(){
+
+    var nombre = $('#nombre');
+
+    // nombre.on('focus', function(e) {
+    //     e.preventDefault();
+    //     if(nombre.val().length === 0){
+    //         nombre.addClass('error');
+    //     }else{
+    //         $(this).removeClass('error');
+    //     }
+    // });
+
+    // nombre.on("change keyup", function(e) {
+    //     e.preventDefault();
+    //     if(nombre.val() === ''){
+    //         nombre.addClass('error');
+    //     }else{
+    //         $(this).removeClass('error');
+    //     }
+    // });
+
+    $("#btnSubmit").on('click', function (e) {
+
+        //stop submit the form, we will post it manually.
+        e.preventDefault();
+
+        // Get form
+        var form = $('#contactForm')[0];
+
+        // Create an FormData object
+        var data = new FormData(form);
+
+        // If you want to add an extra field for the FormData
+        // data.append("CustomField", "This is some extra data, testing");
+
+        // disabled the submit button
+        // $("#btnSubmit").prop("disabled", true);
+
+        if(nombre.val().length === 0){
+
+            nombre.addClass('error');
+
+        }else{
+            // Funcion AJAX que hace el envio de los datos hacia el PHP
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "contacto.php",
+                data: data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 600000,
+                success: function (data) {
+
+                // $("#result").text(data);
+                console.log("SUCCESS : ", data);
+                $("#btnSubmit").prop("disabled", false);
+
+                },
+                error: function (e) {
+
+                    // $("#result").text(e.responseText);
+                    console.log("ERROR : ", e);
+                    $("#btnSubmit").prop("disabled", false);
+
+                }
+            });
+        }
+
+    });
+})();
 
