@@ -8,16 +8,14 @@
 // });
 
 // Boton menu movil
-$('#btnMostrarMenu').on('click', function(e) {
-    e.preventDefault();
+$('.menu_toggle').on('click', function(){
+    console.log('abrete sesamo');
 
-    console.log('click');
-
+    $('.menu_toggle_hamburger').toggleClass('hide_on');
+    $('.mainHeader_nav, .menu_toggle_hide').toggleClass('show_on');
+    $('.menu_toggle_cross').toggleClass('rotate45');
     $('.to-up').toggleClass('up-65');
     $('.to-down').toggleClass('down-76');
-    // $('.elem_to_hide').toggleClass('hide_on');
-    $('.mainHeader').toggleClass('mainHeader_on');
-    $('.mainHeader_nav').toggleClass('mainHeader_nav_on');
 
 });
 
@@ -142,15 +140,15 @@ $(window).on('load resize', function(){
 
     //Removiendo clases del menu abierto evitando en el resize efectos o saltos
     if(anchoVentana <= 768 ){
-        $('.mainHeader_nav').addClass('mainHeader_nav_transition');
+        $('.mainHeader_nav, .menu_toggle_hide').addClass('change_opacity');
         $('.mainHeader_nav a').addClass('button');
     }else{
         $('.to-up').removeClass('up-65');
         $('.to-down').removeClass('down-76');
-        $('.mainHeader_nav').removeClass('mainHeader_nav_transition mainHeader_nav_on');
-        $('.mainHeader').removeClass('mainHeader_on');
+        $('.mainHeader_nav, .menu_toggle_hide').removeClass('change_opacity show_on');
         $('.mainHeader_nav a').removeClass('button');
-        // $('.elem_to_hide').removeClass('hide_on');
+        $('.menu_toggle_hamburger').removeClass('hide_on');
+        $('.menu_toggle_cross').removeClass('rotate45');
     }
 
 });
@@ -254,4 +252,3 @@ $('#contactForm').on('keyup', '.required.error', function(){
 
 
 })();
-

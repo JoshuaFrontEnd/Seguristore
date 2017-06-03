@@ -4,7 +4,7 @@
 
 html{
     font-family: 'Hind', sans-serif;
-    min-width: 320px;
+/*     min-width: 320px; */
     width: 100%;
     font-size: 16px;
 }
@@ -439,7 +439,7 @@ input:-webkit-autofill {
 
 .wrapper{
     width: 100%;
-    min-width: 320px;
+    /* min-width: 320px; */
     margin: 0 auto;
     position: relative;
 }
@@ -499,6 +499,10 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav{
     bottom: 0;
 }
 
+.change_opacity{
+    will-change: opacity;
+    transition: opacity .3s ease-in-out;
+}
 
 /*-- develop --*/
 
@@ -565,14 +569,65 @@ h2,h3{
 
 @media ( max-width: 768px ){
 
-    .btnMostrarMenu{
-        padding: 20px;
+    /* ==========================================================================
+       Menu
+       ========================================================================== */
+    .menu_toggle {
+        pointer-events: initial;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        cursor: pointer;
+        top: 38px;
+        right: 30px;
+    }
+
+    .menu_toggle span {
         display: block;
+        background: #074a8e;
+    }
+
+    .menu_toggle_hamburger {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+    }
+
+    .menu_toggle_hamburger span {
+        width: 50px;
+        height: 6px;
+        position: relative;
+        margin-bottom: 8px;
+    }
+
+    .menu_toggle_cross {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: -8px;
+        transform: rotate(0deg);
+        will-change: transform;
+        transition: transform .3s ease-in-out;
+    }
+
+    .menu_toggle_hide {
+        height: 100%;
+        width: 6px;
         position: absolute;
         top: 0;
-        right: 0;
-        pointer-events: initial;
-        cursor: pointer;
+        left: 22px;
+        transition-delay: 0s;
+        background: #074a8e;
+        opacity: 0;
+    }
+
+    .menu_toggle_cross span:nth-child(2) {
+        width: 100%;
+        height: 6px;
+        top: 22px;
+        left: 0;
+        opacity: 1;
     }
 
     .mainHeader{
@@ -585,8 +640,9 @@ h2,h3{
         pointer-events: none;
     }
 
-    .mainHeader_on{
-        /*background: rgba(255, 194, 41, 1);*/
+    .mainHeader_logo{
+        transform-origin: left;
+        transform: scale(.8) translate(8px,16px);
     }
 
     .mainHeader_nav{
@@ -599,15 +655,6 @@ h2,h3{
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
-        will-change: opacity;
-    }
-
-    .mainHeader_nav_transition{
-        transition: opacity .3s ease-in-out;
-    }
-
-    .mainHeader_nav_on{
-        opacity: 1;
     }
 
     .mainHeader_nav a{
@@ -615,17 +662,6 @@ h2,h3{
         float: none;
         display: block;
         margin: 0 auto 16px;
-/*        text-transform: uppercase;
-        color: #fff;
-        background: #ffc229;
-        font-weight: bold;
-        letter-spacing: 0.5px;
-        text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
-        padding: 16px;
-        line-height: 1.5;
-        border-radius: 3px;
-        width: 295px;*/
-        /*padding: 20px;*/
     }
 
     .mainHeader_nav a:hover, .activeNav{
@@ -671,10 +707,12 @@ h2,h3{
         transform: translateY(76px);
     }
 
-    .elem_to_hide{
+    .rotate45{
+        transform: rotate(45deg);
+    }
+
+    .show_on{
         opacity: 1;
-        will-change: opacity;
-        transition: opacity .3s ease-in-out;
     }
 
     .hide_on{
