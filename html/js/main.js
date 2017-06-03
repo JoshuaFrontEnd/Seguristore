@@ -1,8 +1,25 @@
+;(function(){
+
+
 // $('<img/>').attr('src', '../img/bgMainBanner2.jpg').on('load', function() {
 //    $(this).remove(); // prevent memory leaks as @benweet suggested
 //    $('.mainBanner').css('background', 'url(../img/bgMainBanner2.jpg) bottom no-repeat');
 //    $('body').css('display', 'block');;
 // });
+
+// Boton menu movil
+$('#btnMostrarMenu').on('click', function(e) {
+    e.preventDefault();
+
+    console.log('click');
+
+    $('.to-up').toggleClass('up-65');
+    $('.to-down').toggleClass('down-76');
+    // $('.elem_to_hide').toggleClass('hide_on');
+    $('.mainHeader').toggleClass('mainHeader_on');
+    $('.mainHeader_nav').toggleClass('mainHeader_nav_on');
+
+});
 
 
 // Dectecto el evento de carga y redimension de la pagina
@@ -17,8 +34,8 @@ $(window).on('load resize', function(){
     // Tomo la altura del header y se la agrego a los fondos del mismo
     $('.headerBgHeight').outerHeight(mainHeaderH);
 
-    $('#mainFooter').css('padding-top', mainHeaderH);
-    $('.stripes').css('top', mainHeaderH);
+    // $('#mainFooter').css('padding-top', mainHeaderH);
+    // $('.stripes').css('top', mainHeaderH);
 
     $(document).on('scroll', onScroll);
 
@@ -44,6 +61,15 @@ $(window).on('load resize', function(){
 
         var scrollPos = $(document).scrollTop();
         replaceColorNav(scrollPos);
+
+    });
+
+    $('.buttonContact').on('click', function(e) {
+        e.preventDefault();
+
+        animateAnchor(this);
+        mainHeaderNav.find('a').removeClass('activeNav');
+        $('.contacto').addClass('activeNav');
 
     });
 
@@ -106,105 +132,126 @@ $(window).on('load resize', function(){
 
         if (scrollPos >= (mainBannerH - 60) ){
             mainHeaderNav.find('a').addClass('replaceColorNav');
-            mainHeaderNav.find('a.hidden').addClass('visible');
+            $('.hidden').addClass('visible');
         }else{
             mainHeaderNav.find('a').removeClass('replaceColorNav');
-            mainHeaderNav.find('a.visible').removeClass('visible');
+            $('.visible').removeClass('visible');
         }
 
     }
 
-    // if(anchoVentana >= 768 ){
-    //     $('.mainHeader').removeClass('active');
-    //     $('.mainHeader_nav').removeClass('active center');
-
-    // }
+    //Removiendo clases del menu abierto evitando en el resize efectos o saltos
+    if(anchoVentana <= 768 ){
+        $('.mainHeader_nav').addClass('mainHeader_nav_transition');
+        $('.mainHeader_nav a').addClass('button');
+    }else{
+        $('.to-up').removeClass('up-65');
+        $('.to-down').removeClass('down-76');
+        $('.mainHeader_nav').removeClass('mainHeader_nav_transition mainHeader_nav_on');
+        $('.mainHeader').removeClass('mainHeader_on');
+        $('.mainHeader_nav a').removeClass('button');
+        // $('.elem_to_hide').removeClass('hide_on');
+    }
 
 });
 
 
-// $('.btnMostrarMenu').on('click', function(e) {
-// e.preventDefault();
-
-//     console.log('click');
-
-//     $('.mainHeader').toggleClass('active');
-//     $('.mainHeader_nav').toggleClass('center active');
-
-// });
-
 // VALIDACION FORMULARIO
-;(function(){
+var required = $('.required'),
+    nombre = $('#nombre'),
+    email = $('#email');
 
-    var nombre = $('#nombre');
+$("#btnSubmit").on('click', function (e) {
+    e.preventDefault();
 
-    // nombre.on('focus', function(e) {
-    //     e.preventDefault();
-    //     if(nombre.val().length === 0){
-    //         nombre.addClass('error');
-    //     }else{
-    //         $(this).removeClass('error');
-    //     }
-    // });
+    //Validando que los campos no esten vacios
+    //No considera si se ingresa caracteres en blanco
+    required.each(function(index, el) {
+        if($(this).val().length === 0){
 
-    // nombre.on("change keyup", function(e) {
-    //     e.preventDefault();
-    //     if(nombre.val() === ''){
-    //         nombre.addClass('error');
-    //     }else{
-    //         $(this).removeClass('error');
-    //     }
-    // });
+            $(this).addClass('error');
 
-    $("#btnSubmit").on('click', function (e) {
-
-        //stop submit the form, we will post it manually.
-        e.preventDefault();
-
-        // Get form
-        var form = $('#contactForm')[0];
-
-        // Create an FormData object
-        var data = new FormData(form);
-
-        // If you want to add an extra field for the FormData
-        // data.append("CustomField", "This is some extra data, testing");
-
-        // disabled the submit button
-        // $("#btnSubmit").prop("disabled", true);
-
-        if(nombre.val().length === 0){
-
-            nombre.addClass('error');
-
-        }else{
-            // Funcion AJAX que hace el envio de los datos hacia el PHP
-            $.ajax({
-                type: "POST",
-                enctype: 'multipart/form-data',
-                url: "contacto.php",
-                data: data,
-                processData: false,
-                contentType: false,
-                cache: false,
-                timeout: 600000,
-                success: function (data) {
-
-                // $("#result").text(data);
-                console.log("SUCCESS : ", data);
-                $("#btnSubmit").prop("disabled", false);
-
-                },
-                error: function (e) {
-
-                    // $("#result").text(e.responseText);
-                    console.log("ERROR : ", e);
-                    $("#btnSubmit").prop("disabled", false);
-
-                }
-            });
+            console.log('no enviado');
         }
-
     });
+
+    //Validando Email
+    function validateEmail(email) {
+        console.log('hola');
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    if(validateEmail(email.val())){
+        email.removeClass('error');
+    }else{
+        email.addClass('error');
+    }
+
+    //Si no existe la clase error se envia el formulario, limpia los campos y envia un mensaje de formulario enviado
+    if (!$('.error').length) {
+        console.log('enviando formulario');
+
+        required.val('');
+
+        // DESACTIVAR BOTON DE ENVIO REVISAR IGUAL
+    }
+
+    // else{
+
+    //     required.removeClass('error');
+
+    //     console.log('enviando');
+    // }
+
+    // // Funcion AJAX que hace el envio de los datos hacia el PHP
+
+    // // Get form
+    // var form = $('#contactForm')[0];
+
+    // // Create an FormData object
+    // var data = new FormData(form);
+
+    // // If you want to add an extra field for the FormData
+    // // data.append("CustomField", "This is some extra data, testing");
+
+    // // disabled the submit button
+    // // $("#btnSubmit").prop("disabled", true);
+
+    // $.ajax({
+    //     type: "POST",
+    //     enctype: 'multipart/form-data',
+    //     url: "contacto.php",
+    //     data: data,
+    //     processData: false,
+    //     contentType: false,
+    //     cache: false,
+    //     timeout: 600000,
+    //     success: function (data) {
+
+    //     // $("#result").text(data);
+    //     console.log("SUCCESS : ", data);
+    //     $("#btnSubmit").prop("disabled", false);
+
+    //     },
+    //     error: function (e) {
+
+    //         // $("#result").text(e.responseText);
+    //         console.log("ERROR : ", e);
+    //         $("#btnSubmit").prop("disabled", false);
+
+    //     }
+    // });
+
+
+});
+
+$('#contactForm').on('keyup', '.required.error', function(){
+    $(this).removeClass('error');
+
+    console.log('keyup');
+});
+
+
 })();
 

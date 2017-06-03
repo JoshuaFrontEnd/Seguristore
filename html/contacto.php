@@ -40,7 +40,7 @@
 
 		$mensaje.= "\n\nMensaje: \n\n".$_POST['mensaje'];
 
-		// $destino = "contacto@seguristore.cl", "hola@joshua.cl";
+		$destino = "contacto@seguristore.cl", "hola@joshua.cl";
 
 		$destino = "hola@joshua.cl, contacto@seguristore.cl";
 
@@ -59,5 +59,3 @@
 	// }
 
 ?>
-
-
