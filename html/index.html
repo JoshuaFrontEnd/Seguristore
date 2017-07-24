@@ -31,26 +31,26 @@
 
     <div class="headerBgTop headerBgHeight hide768"></div>
 
-    <header class="mainHeader">
+    <header class="mainHeader headerBgHeight">
 
         <div class="wrapper wrapperHeader">
 
             <div class="mainHeader_logo">
                     <img class="mainHeader_logo_imgLogo" src="img/logo.png" alt="SeguriStore" width="70" height="59">
-                    <h1 class="mainHeader_logo_title hide768">SeguriStore</h1>
+                    <h1 class="mainHeader_logo_title hide768">SeguriStore </h1>
             </div>
 
             <!-- <button id="btnMostrarMenu" class="hide1024 btnMostrarMenu">mostrar menu</button> -->
 
             <div class="menu_toggle">
-                <div class="change_opacity menu_toggle_hamburger">
+                <div class="menu_toggle_hamburger change_opacity">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
                 <div class="menu_toggle_cross">
-                    <span class="menu_toggle_hide"></span>
-                    <span class="menu_toggle_hide"></span>
+                    <span class="menu_toggle_hide hide_on"></span>
+                    <span class="menu_toggle_hide hide_on"></span>
                 </div>
             </div>
 
@@ -79,7 +79,10 @@
 
             <div class="to-down">
 
-                <a class="buttonContact button centerTable" href="#mainFooter">Cotiza con nosotros</a>
+                <a class="buttonContact button centerTable" href="#mainFooter">
+                    <span class="center centerTable buttonContact_textA">Cotiza con nosotros</span>
+                    <span class="center centerTable buttonContact_textB">Contacto</span>
+                </a>
 
                 <div class="centerTable">
 
@@ -127,27 +130,72 @@
 
     <section id="nosotros" class="nosotros">
 
-<!--         <div class="nosotros_box">
-            <img class="nosotros_box_img" src="img/seriedad.jpg" alt="Seriedad" width="340" height="237">
-            <p class="nosotros_box_title">Seriedad</p>
-            <p class="nosotros_box_txt">Poseemos una sólida experiencia en el sector industrial, agrícola y manufacturero, ampliando cada vez nuestra visión respecto a mercados emergentes. La búsqueda de soluciones ajustadas a los requerimientos de cada cliente es la finalidad a una respuesta eficiente y eficaz de nuestro trabajo.</p>
+<!--         <div class="nosotros_contVideo">
+
+            <iframe class="nosotros_contVideo_video" src="https://www.youtube.com/embed/eX07WSUxpyc" allowfullscreen></iframe>
+
         </div>
 
-        <div class="nosotros_box">
-            <img class="nosotros_box_img" src="img/nosotros.jpg" alt="Nosotros" width="340" height="237">
-            <p class="nosotros_box_title">Nosotros</p>
-            <p class="nosotros_box_txt">Nuestra dedicación en la búsqueda de productos y servicios, nos ubica como un socio estratégico y confiable, siendo un equipo humano especializado, con un alto sentido de responsabilidad y profesionalismo, respondiendo a los requerimientos y necesidades de nuestros clientes, valiéndonos de propuestas con altos estándares en investigación e innovación.</p>
-        </div>
+        <div class="nosotros_contBox">
 
-        <div class="nosotros_box">
-            <img class="nosotros_box_img" src="img/trabajo.jpg" alt="Trabajo en equipo" width="340" height="237">
-            <p class="nosotros_box_title">Trabajo en equipo</p>
-            <p class="nosotros_box_txt">Escuchamos a nuestros clientes, apoyamos sus procesos y disponemos a su servicio nuestros recursos técnicos para ofrecerles soluciones. Nos esforzamos por brindar un servicio justo, entregando productos de calidad y por actuar de manera correcta con quienes trabajamos.</p>
+            <div class="nosotros_contBox_box">
+                <img class="nosotros_contBox_boxImg" src="img/seriedad.jpg" alt="Seriedad" width="340" height="237">
+                <p class="nosotros_contBox_boxTitle">Seriedad</p>
+                <p class="nosotros_contBox_boxTxt">Poseemos una sólida experiencia en el sector industrial, agrícola y manufacturero, ampliando cada vez nuestra visión respecto a mercados emergentes. La búsqueda de soluciones ajustadas a los requerimientos de cada cliente es la finalidad a una respuesta eficiente y eficaz de nuestro trabajo.</p>
+            </div>
+
+            <div class="nosotros_contBox_box">
+                <img class="nosotros_contBox_boxImg" src="img/nosotros.jpg" alt="Nosotros" width="340" height="237">
+                <p class="nosotros_contBox_boxTitle">Nosotros</p>
+                <p class="nosotros_contBox_boxTxt">Nuestra dedicación en la búsqueda de productos y servicios, nos ubica como un socio estratégico y confiable, siendo un equipo humano especializado, con un alto sentido de responsabilidad y profesionalismo, respondiendo a los requerimientos y necesidades de nuestros clientes, valiéndonos de propuestas con altos estándares en investigación e innovación.</p>
+            </div>
+
+            <div class="nosotros_contBox_box">
+                <img class="nosotros_contBox_boxImg" src="img/trabajo.jpg" alt="Trabajo en equipo" width="340" height="237">
+                <p class="nosotros_contBox_boxTitle">Trabajo en equipo</p>
+                <p class="nosotros_contBox_boxTxt">Escuchamos a nuestros clientes, apoyamos sus procesos y disponemos a su servicio nuestros recursos técnicos para ofrecerles soluciones. Nos esforzamos por brindar un servicio justo, entregando productos de calidad y por actuar de manera correcta con quienes trabajamos.</p>
+            </div>
+
         </div> -->
 
     </section>
 
-    <section id="tres" class="dev dev2">
+    <section id="tres" class="dev dev2" style="padding: 200px 0;">
+
+        <!-- Considerar un titulo algo asi como "SeguriStore te ofrece calidad y proteccion:" -->
+
+        <!-- Tambien considerar que termine con borde triangular  -->
+
+        <!--
+
+        PROTECCION:
+
+        - CONTRA CAIDAS (Cabos de vida, Arneses, Barbiquejos)
+        - OCULAR (Antiparras, Lentes)
+        - DE PIES (Calzados, Rodilleras, Suelas antideslizantes)
+        - DE CABEZA (Cascos, Tafiletes para cascos)
+        - CONTRA RADIACION UV (Protectores Solares, Paños Legionarios)
+        - RESPIRATORIA (Filtros, Mascarillas)
+        - CONTRA RUIDO (Fono cobertor, Tapones Auditivos)
+        - DE MANOS (Guantes)
+        - ROPA INDUSTRIAL (Chalecos reflectantes, Overoles, Trajes Impermeables)
+        - ALTAS TEMPERATURAS (Vestimenta para soldadores)
+
+         -->
+
+        <div class="producto">
+
+            <img class="producto_img" src="img/productos/manos.png" alt="">
+
+            <div class="producto_title">MANUAL</div>
+
+            <ul class="producto_txt">
+                <li class="producto_txt_a no_hoVer">- Arneses</li>
+                <li class="producto_txt_b no_hoVer">- Barbiquejos</li>
+                <li class="producto_txt_c no_hoVer">- Cabos de vida</li>
+            </ul>
+
+        </div>
 
 
     </section>
@@ -158,6 +206,7 @@
 
         <div class="wrapper wrapperFooter">
 
+
             <form id="contactForm" class="contactForm columnForm" method="POST" enctype="multipart/form-data">
 
                 <input id="nombre" name="nombre" placeholder="Nombre" type="text" class="inputForm required" size="30" />
@@ -167,6 +216,12 @@
                 <textarea id="" name="mensaje" placeholder="Mensaje" class="textareaForm required" cols="30" rows="10"></textarea>
 
                 <input id="btnSubmit" type="submit" value="Enviar" title="Enviar" class="button btn-form inputForm" />
+
+                <div class="contactForm_gracias">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil officiis, facilis fugiat quisquam eligendi nesciunt animi minima, beatae ad fugit unde dolore illo doloribus temporibus voluptatum non consectetur alias ratione.</p>
+
+                </div>
 
             </form>
 
