@@ -263,24 +263,33 @@ color: orangered;*/}
     width: 80%;
 }
 
-/*.producto{
+.producto{
     width: 300px;
     height: 300px;
-    overflow: hidden;
     background: #ffc229;
     text-align: center;
-    margin-left: 300px;
+    margin: 15px;
     position: relative;
+    color: #074a8e;
+    float: left;
 }
 
 .producto_img{
     width: 190px;
-    margin: 27px;
 }
 
 .producto_title{
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
     font-weight: bold;
     font-size: 1.8em;
+    padding: 15px 0;
+    width: 80%;
+    background: #074a8e;
+    color: #fff;
+    text-transform: uppercase;
 }
 
 .producto_txt{
@@ -305,13 +314,25 @@ color: orangered;*/}
     pointer-events: auto;
 }
 
-.no_hoVer{
+.producto_imgHover{
+    opacity: 1;
+    transform: translate(-50%, -50%) !important;
+    transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1) .5s;
+}
+
+.producto_imgHoverOn{
+    opacity: 0;
+    transform: translate(-55%, -50%) !important;
+    transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.productoHover{
     transform: translateX(-20px);
     opacity: 0;
     transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.hoVer{
+.productoHoverOn{
     opacity: 1;
     transform: translateX(0);
 }
@@ -323,15 +344,14 @@ color: orangered;*/}
 .delay_4s{
     transition-delay: .4s;
 }
-*/
 
 
 
+/*
 .producto{
     width: 300px;
     height: 300px;
     overflow: hidden;
-     /*border: 4px solid #ffc229;*/
     background: #ffc229;
     text-align: center;
     margin-left: 300px;
@@ -343,8 +363,6 @@ color: orangered;*/}
     margin: 27px;
     opacity: 1;
     transition: opacity .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-/*
-    opacity: 0;*/
 }
 
 .producto_title{
@@ -374,7 +392,6 @@ color: orangered;*/}
     pointer-events: auto;
     transform: translateX(-20px);
     opacity: 0;
-         /*background: yellow;*/
 }
 
 .producto:hover .producto_img{
@@ -394,10 +411,10 @@ color: orangered;*/}
 .producto:hover .producto_txt .producto_txt_c{
     transition-delay: .4s;
 }
-
+*/
 
 /*--- FOOTER ---*/
-.mainFooter{/*     position: relative; */padding-top: 200px;}
+.mainFooter{/*     position: relative; *//* overflow: hidden; */padding-top: 200px;}
 
 .mainFooter_title{
     font-size: 2em;
@@ -824,9 +841,9 @@ h2,h3{
     .mainHeader_nav{
         pointer-events: initial;
         width: 100%;
+        margin: 0;
         text-align: center;
         position: absolute;
-        margin: 0;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

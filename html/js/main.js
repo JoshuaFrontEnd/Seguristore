@@ -112,11 +112,16 @@ var resizeOn = function(){
 
     var anchoVentana = $(window).outerWidth();
 
+    console.log(anchoVentana);
+
     //Removiendo clases del menu abierto evitando en el resize efectos o saltos
     if(anchoVentana <= 768 ){
         $('.mainHeader_nav').addClass('hide_on');
         $('.mainHeader_nav').addClass('change_opacity');
         $('.mainHeader_nav a').addClass('button');
+
+        // $('.producto').off();
+
     }else{
         $('.to-up').removeClass('up-65');
         $('.to-down').removeClass('down-76');
@@ -129,6 +134,12 @@ var resizeOn = function(){
 
         $('.buttonContact_textA').removeClass('hidden');
         $('.buttonContact_textB').removeClass('show_on');
+
+        $('.producto').on({
+            mouseenter: hoverOn,
+            mouseleave: hoverOff
+        });
+
     }
 
 };
@@ -274,17 +285,50 @@ $('#contactForm').on('keyup', '.required.error', function(){
 
 // $('.producto').on({
 //     mouseenter: function () {
-//         $('.producto_img').addClass('hidden');
-//         $('.producto_txt_a').removeClass('delay_4s');
-//         $('.producto_txt li').addClass('hoVer');
-//         $('.producto_txt_b').addClass('delay_2s');
-//         $('.producto_txt_c').addClass('delay_4s');
+//         $('.producto_imgHover', this).addClass('producto_imgHoverOn');
+//         $('.producto_txt_a', this).removeClass('delay_4s');
+//         $('.producto_txt li', this).addClass('productoHoverOn');
+//         $('.producto_txt_b', this).addClass('delay_2s');
+//         $('.producto_txt_c', this).addClass('delay_4s');
 //     },
 //     mouseleave: function () {
-//         $('.producto_txt li').removeClass('hoVer');
-//         $('.producto_txt_a').addClass('delay_4s');
-//         $('.producto_txt_b').removeClass('delay_2s').addClass('delay_2s');
-//         $('.producto_txt_c').removeClass('delay_4s');
-//         $('.producto_img').removeClass('hidden');
+//         $('.producto_txt li', this).removeClass('productoHoverOn');
+//         $('.producto_txt_a', this).addClass('delay_4s');
+//         $('.producto_txt_b', this).removeClass('delay_2s').addClass('delay_2s');
+//         $('.producto_txt_c', this).removeClass('delay_4s');
+//         $('.producto_imgHover', this).removeClass('producto_imgHoverOn');
 //     }
 // });
+
+
+
+function hoverOn(){
+    $('.producto_imgHover', this).addClass('producto_imgHoverOn');
+    $('.producto_txt_a', this).removeClass('delay_4s');
+    $('.producto_txt li', this).addClass('productoHoverOn');
+    $('.producto_txt_b', this).addClass('delay_2s');
+    $('.producto_txt_c', this).addClass('delay_4s');
+}
+
+function hoverOff() {
+    $('.producto_txt li', this).removeClass('productoHoverOn');
+    $('.producto_txt_a', this).addClass('delay_4s');
+    $('.producto_txt_b', this).removeClass('delay_2s').addClass('delay_2s');
+    $('.producto_txt_c', this).removeClass('delay_4s');
+    $('.producto_imgHover', this).removeClass('producto_imgHoverOn');
+}
+
+
+// $('.producto').on('click', function(event) {
+//     event.preventDefault();
+//     // $('.producto_txt_a', this).removeClass('delay_4s');
+//     $('.producto_imgHover', this).toggleClass('producto_imgHoverOn');
+//     $('.producto_txt li', this).toggleClass('productoHoverOn');
+//     $('.producto_txt_b', this).toggleClass('delay_2s');
+//     $('.producto_txt_c', this).toggleClass('delay_4s');
+// });
+
+
+
+
+
