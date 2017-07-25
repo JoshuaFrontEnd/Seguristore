@@ -120,7 +120,7 @@ var resizeOn = function(){
         $('.mainHeader_nav').addClass('change_opacity');
         $('.mainHeader_nav a').addClass('button');
 
-        // $('.producto').off();
+        $('.producto').off();
 
     }else{
         $('.to-up').removeClass('up-65');
