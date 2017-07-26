@@ -15,6 +15,8 @@ body{
 }
 
 html, body{
+    min-width: 320px;
+    overflow-x: hidden;
     height: 100%;
     min-height: 500px;
     margin: 0;
@@ -266,10 +268,6 @@ color: orangered;*/}
 /*     background: red; */
 }
 
-.producto_bg_484{
-    display: inline-block;
-}
-
 .producto{
     width: 237px;
     height: 288px;
@@ -282,12 +280,12 @@ color: orangered;*/}
     background: red;
 }
 
-.producto_bg_484:nth-child(odd) .producto{
+.producto:nth-child(odd){
     background: #ffc229;
     color: #333;
 }
 
-.producto_bg_484:nth-child(even) .producto{
+.producto:nth-child(even){
     background: #333;
     color: #ffc229;
 }
@@ -299,7 +297,7 @@ color: orangered;*/}
     transition: all .7s cubic-bezier(0.39, 0.58, 0.57, 1) .2s;
 }
 
-.producto_box:hover .producto_img_hover{
+.producto:hover .producto_img_hover{
     opacity: 0;
     transform: perspective(1px) translate(-55%, -50%) skewX(15deg) !important;
     transition: all .3s ease-out;
@@ -338,16 +336,16 @@ color: orangered;*/}
     transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.producto_box:hover .producto_txt_hover{
+.producto:hover .producto_txt_hover{
     opacity: 1;
     transform: perspective(1px) translateX(0) skewX(15deg);
 }
 
-.producto_box:hover .delay_2s{
+.producto:hover .delay_2s{
     transition-delay: .2s;
 }
 
-.producto_box:hover .delay_4s{
+.producto:hover .delay_4s{
     transition-delay: .4s;
 }
 
@@ -691,6 +689,32 @@ h2,h3{
 
 /*-- MEDIA QUERIES --*/
 
+@media ( min-width: 1280px ){
+
+    .cont_productos:before{
+        content: '';
+        border-style: solid;
+        border-width: 292px 80px 0 0;
+        border-color: #FFF transparent transparent transparent;
+        position: absolute;
+        z-index: 2;
+        top: 21px;
+        left: 0;
+    }
+
+    .cont_productos:after{
+        content: '';
+        border-style: solid;
+        border-width: 0 0 292px 80px;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        z-index: 2;
+        top: 15px;
+        right: 0;
+    }
+
+}
+
 @media ( max-width: 1024px ){
 
     .mainFooter_title{
@@ -918,3 +942,5 @@ h2,h3{
     margin: 0 10%;
     width: 80%;
 }
+
+

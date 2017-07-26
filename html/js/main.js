@@ -275,3 +275,28 @@ $('#contactForm').on('keyup', '.required.error', function(){
 // - Revisar las clases que cambian la opacidad
 // - Cambiar los nombres
 // - Evaluar la posibilidad de volver al commit anterior a estos cambios, pero guardar primero todo este codigo
+
+$('.cont_productos').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
