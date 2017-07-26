@@ -256,55 +256,58 @@ color: orangered;*/}
 
 
 /*--- PRODUCTOS ---*/
-.logo_proveedores{
-    max-width: 715px;
-    height: auto;
-    margin: 0 10%;
-    width: 80%;
-}
-
 .cont_productos{
     max-width: 1260px;
-    padding-left:32px;
     margin: auto;
     overflow: hidden;
-    background: red;
+    text-align: center;
+
+    /*background: #333;*/
+/*     background: red; */
+}
+
+.producto_bg_484{
+    display: inline-block;
 }
 
 .producto{
-    width: 242px;
-    width: 240px;
-    height: 242px;
+    width: 237px;
+    height: 288px;
     text-align: center;
-    margin: 0px -1px 34px 0;
+    margin: 0 -5px -5px 0;
     position: relative;
-    float: left;
+     transform: skewX(-15deg);
+    cursor: default;
+    display: inline-block;
+    background: red;
+}
+
+.producto_bg_484:nth-child(odd) .producto{
     background: #ffc229;
-    color: #074a8e;
-    transform: skewX(-15deg);
+    color: #333;
+}
+
+.producto_bg_484:nth-child(even) .producto{
+    background: #333;
+    color: #ffc229;
 }
 
 .producto_img{
-    margin-top: -16px;
+    margin-top: -20px;
+    opacity: 1;
+    transform: perspective(1px) translate(-50%, -50%) skewX(15deg) !important;
+    transition: all .7s cubic-bezier(0.39, 0.58, 0.57, 1) .2s;
 }
 
-.producto_title{
-    position: absolute;
-    bottom: -24px;
-    left: 50%;
-    transform: translateX(-50%) skewX(15deg);
-    font-weight: bold;
-    font-size: 1.em;
-    padding: 15px 0;
-    width: 80%;
-    text-transform: uppercase;
-    background: #074a8e;
-    color: #fff;
+.producto_box:hover .producto_img_hover{
+    opacity: 0;
+    transform: perspective(1px) translate(-55%, -50%) skewX(15deg) !important;
+    transition: all .3s ease-out;
 }
 
 .producto_txt{
     padding: 0;
-    margin: 0;
+    margin: -10px 0 0 0;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -320,115 +323,53 @@ color: orangered;*/}
 .producto_txt li:before{
     content: "» ";
     color: inherit;
+    position:absolute;
+    top: -2px;
+    left: 0;
 }
 
 .producto_txt li{
-    margin: 0 0 10px 20%;
+    position: relative;
+    padding-left: 15px;
+    margin: 0 0 10px 40px;
     pointer-events: auto;
-}
-
-.producto_imgHover{
-    opacity: 1;
-    transform: translate(-50%, -50%) skewX(15deg) !important;
-    transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1) .5s;
-}
-
-.producto_imgHoverOn{
     opacity: 0;
-    transform: translate(-55%, -50%) skewX(15deg) !important;
+    transform: perspective(1px) translateX(-20px) skewX(15deg);
     transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.producto_txtHover{
-    opacity: 0;
-    transform: perspective(1px) translateX(-20px) skewX(15deg);
-    /*transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);*/
-    transition: all .5s;
-}
-
-.producto_txtHoverOn{
+.producto_box:hover .producto_txt_hover{
     opacity: 1;
     transform: perspective(1px) translateX(0) skewX(15deg);
 }
 
-/*.delay_2s{
+.producto_box:hover .delay_2s{
     transition-delay: .2s;
 }
 
-.delay_4s{
+.producto_box:hover .delay_4s{
     transition-delay: .4s;
-}
-*/
-
-
-/*
-.producto{
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    background: #ffc229;
-    text-align: center;
-    margin-left: 300px;
-    position: relative;
-}
-
-.producto_img{
-    width: 190px;
-    margin: 27px;
-    opacity: 1;
-    transition: opacity .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .producto_title{
-    font-weight: bold;
-    font-size: 1.8em;
-}
-
-.producto_txt{
-    padding: 0;
-    margin: 0;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    top: 0;
-    list-style-type: none;
-    text-align: left;
-    pointer-events: none;
+    bottom: 20px;
+    left: 50%;
+    transform: perspective(1px) translateX(-50%) skewX(15deg);
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1;
+    /* padding: 15px 0; */
+    width: 80%;
+    text-transform: uppercase;
 }
-
-.producto_txt li{
-    width: 50%;
-    margin: 0 0 10px 30%;
-    font-size: 1.2em;
-    pointer-events: auto;
-    transform: translateX(-20px);
-    opacity: 0;
-}
-
-.producto:hover .producto_img{
-    opacity: 0;
-}
-
-.producto:hover .producto_txt li{
-    opacity: 1;
-    transform: translateX(0);
-    transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.producto:hover .producto_txt .producto_txt_b{
-    transition-delay: .2s;
-}
-
-.producto:hover .producto_txt .producto_txt_c{
-    transition-delay: .4s;
-}
-*/
 
 /*--- FOOTER ---*/
-.mainFooter{/*     position: relative; *//* overflow: hidden; */padding-top: 200px;}
+.mainFooter{
+    position: relative;
+    overflow: hidden;
+    padding-top: 200px;
+}
 
 .mainFooter_title{
     font-size: 2em;
@@ -444,6 +385,7 @@ color: orangered;*/}
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
+    overflow: hidden;
 /*     flex-direction: row; */
     /*     border: 1px dashed blue;
     background: green; */
@@ -927,6 +869,22 @@ h2,h3{
     }
 }
 
+@media ( max-width: 484px ){
+
+    .producto_bg_484{
+        display: block;
+    }
+
+    .producto_bg_484:nth-child(odd){
+        background: #333;
+    }
+
+    .producto_bg_484:nth-child(even){
+        background: #ffc229;
+    }
+
+}
+
 @media ( max-width: 450px ){
 
     .formInfo{
@@ -952,3 +910,11 @@ h2,h3{
 
 
 /*PAGO DE PATENTE HASTA LAS 8:00 - 14:00 Y 15:00 HASTA 5:30*/
+
+
+.logo_proveedores{
+    max-width: 715px;
+    height: auto;
+    margin: 0 10%;
+    width: 80%;
+}

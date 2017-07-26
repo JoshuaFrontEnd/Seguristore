@@ -120,8 +120,6 @@ var resizeOn = function(){
         $('.mainHeader_nav').addClass('change_opacity');
         $('.mainHeader_nav a').addClass('button');
 
-        $('.producto').off();
-
     }else{
         $('.to-up').removeClass('up-65');
         $('.to-down').removeClass('down-76');
@@ -134,11 +132,6 @@ var resizeOn = function(){
 
         $('.buttonContact_textA').removeClass('hidden');
         $('.buttonContact_textB').removeClass('show_on');
-
-        $('.producto').on({
-            mouseenter: hoverOn,
-            mouseleave: hoverOff
-        });
 
     }
 
@@ -282,53 +275,3 @@ $('#contactForm').on('keyup', '.required.error', function(){
 // - Revisar las clases que cambian la opacidad
 // - Cambiar los nombres
 // - Evaluar la posibilidad de volver al commit anterior a estos cambios, pero guardar primero todo este codigo
-
-// $('.producto').on({
-//     mouseenter: function () {
-//         $('.producto_imgHover', this).addClass('producto_imgHoverOn');
-//         $('.producto_txt_a', this).removeClass('delay_4s');
-//         $('.producto_txt li', this).addClass('producto_txtHoverOn');
-//         $('.producto_txt_b', this).addClass('delay_2s');
-//         $('.producto_txt_c', this).addClass('delay_4s');
-//     },
-//     mouseleave: function () {
-//         $('.producto_txt li', this).removeClass('producto_txtHoverOn');
-//         $('.producto_txt_a', this).addClass('delay_4s');
-//         $('.producto_txt_b', this).removeClass('delay_2s').addClass('delay_2s');
-//         $('.producto_txt_c', this).removeClass('delay_4s');
-//         $('.producto_imgHover', this).removeClass('producto_imgHoverOn');
-//     }
-// });
-
-
-
-function hoverOn(){
-    $('.producto_txt li', this).addClass('producto_txtHoverOn');
-    $('.producto_txt_a', this).removeClass('delay_4s');
-    $('.producto_txt_b', this).addClass('delay_2s');
-    $('.producto_txt_c', this).addClass('delay_4s');
-    $('.producto_imgHover', this).addClass('producto_imgHoverOn');
-}
-
-function hoverOff() {
-    $('.producto_txt li', this).removeClass('producto_txtHoverOn');
-    $('.producto_txt_a', this).addClass('delay_4s');
-    $('.producto_txt_b', this).removeClass('delay_2s').addClass('delay_2s');
-    $('.producto_txt_c', this).removeClass('delay_4s');
-    $('.producto_imgHover', this).removeClass('producto_imgHoverOn');
-}
-
-
-// $('.producto').on('click', function(event) {
-//     event.preventDefault();
-//     // $('.producto_txt_a', this).removeClass('delay_4s');
-//     $('.producto_imgHover', this).toggleClass('producto_imgHoverOn');
-//     $('.producto_txt li', this).toggleClass('producto_txtHoverOn');
-//     $('.producto_txt_b', this).toggleClass('delay_2s');
-//     $('.producto_txt_c', this).toggleClass('delay_4s');
-// });
-
-
-
-
-
