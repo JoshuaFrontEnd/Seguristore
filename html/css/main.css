@@ -265,37 +265,26 @@ color: orangered;*/}
 
 .cont_productos{
     max-width: 1260px;
+    padding-left:32px;
     margin: auto;
     overflow: hidden;
-/*     background: red; */
+    background: red;
 }
 
 .producto{
     width: 242px;
+    width: 240px;
     height: 242px;
     text-align: center;
-    margin: 0px 5px 34px;
+    margin: 0px -1px 34px 0;
     position: relative;
     float: left;
     background: #ffc229;
     color: #074a8e;
-
-/*    background: #333;
-    color: #fff;*/
+    transform: skewX(-15deg);
 }
-
-/*.producto:nth-child(even){
-    background: #333;
-    color: #fff;
-}
-
-.producto:nth-child(even) .producto_title{
-    background: #ffc229;
-    color: #333;
-}*/
 
 .producto_img{
-/*     width: 150px; */
     margin-top: -16px;
 }
 
@@ -303,7 +292,7 @@ color: orangered;*/}
     position: absolute;
     bottom: -24px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) skewX(15deg);
     font-weight: bold;
     font-size: 1.em;
     padding: 15px 0;
@@ -311,9 +300,6 @@ color: orangered;*/}
     text-transform: uppercase;
     background: #074a8e;
     color: #fff;
-
-/*    background: #ffc229;
-    color: #333;*/
 }
 
 .producto_txt{
@@ -343,35 +329,36 @@ color: orangered;*/}
 
 .producto_imgHover{
     opacity: 1;
-    transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) skewX(15deg) !important;
     transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1) .5s;
 }
 
 .producto_imgHoverOn{
     opacity: 0;
-    transform: translate(-55%, -50%) !important;
+    transform: translate(-55%, -50%) skewX(15deg) !important;
     transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.productoHover{
-    transform: translateX(-20px);
+.producto_txtHover{
     opacity: 0;
-    transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transform: perspective(1px) translateX(-20px) skewX(15deg);
+    /*transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);*/
+    transition: all .5s;
 }
 
-.productoHoverOn{
+.producto_txtHoverOn{
     opacity: 1;
-    transform: translateX(0);
+    transform: perspective(1px) translateX(0) skewX(15deg);
 }
 
-.delay_2s{
+/*.delay_2s{
     transition-delay: .2s;
 }
 
 .delay_4s{
     transition-delay: .4s;
 }
-
+*/
 
 
 /*
@@ -962,3 +949,6 @@ h2,h3{
     font-family: Hind;
     font-weight: 700;
 }
+
+
+/*PAGO DE PATENTE HASTA LAS 8:00 - 14:00 Y 15:00 HASTA 5:30*/

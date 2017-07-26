@@ -287,12 +287,12 @@ $('#contactForm').on('keyup', '.required.error', function(){
 //     mouseenter: function () {
 //         $('.producto_imgHover', this).addClass('producto_imgHoverOn');
 //         $('.producto_txt_a', this).removeClass('delay_4s');
-//         $('.producto_txt li', this).addClass('productoHoverOn');
+//         $('.producto_txt li', this).addClass('producto_txtHoverOn');
 //         $('.producto_txt_b', this).addClass('delay_2s');
 //         $('.producto_txt_c', this).addClass('delay_4s');
 //     },
 //     mouseleave: function () {
-//         $('.producto_txt li', this).removeClass('productoHoverOn');
+//         $('.producto_txt li', this).removeClass('producto_txtHoverOn');
 //         $('.producto_txt_a', this).addClass('delay_4s');
 //         $('.producto_txt_b', this).removeClass('delay_2s').addClass('delay_2s');
 //         $('.producto_txt_c', this).removeClass('delay_4s');
@@ -303,15 +303,15 @@ $('#contactForm').on('keyup', '.required.error', function(){
 
 
 function hoverOn(){
-    $('.producto_imgHover', this).addClass('producto_imgHoverOn');
+    $('.producto_txt li', this).addClass('producto_txtHoverOn');
     $('.producto_txt_a', this).removeClass('delay_4s');
-    $('.producto_txt li', this).addClass('productoHoverOn');
     $('.producto_txt_b', this).addClass('delay_2s');
     $('.producto_txt_c', this).addClass('delay_4s');
+    $('.producto_imgHover', this).addClass('producto_imgHoverOn');
 }
 
 function hoverOff() {
-    $('.producto_txt li', this).removeClass('productoHoverOn');
+    $('.producto_txt li', this).removeClass('producto_txtHoverOn');
     $('.producto_txt_a', this).addClass('delay_4s');
     $('.producto_txt_b', this).removeClass('delay_2s').addClass('delay_2s');
     $('.producto_txt_c', this).removeClass('delay_4s');
@@ -323,7 +323,7 @@ function hoverOff() {
 //     event.preventDefault();
 //     // $('.producto_txt_a', this).removeClass('delay_4s');
 //     $('.producto_imgHover', this).toggleClass('producto_imgHoverOn');
-//     $('.producto_txt li', this).toggleClass('productoHoverOn');
+//     $('.producto_txt li', this).toggleClass('producto_txtHoverOn');
 //     $('.producto_txt_b', this).toggleClass('delay_2s');
 //     $('.producto_txt_c', this).toggleClass('delay_4s');
 // });
