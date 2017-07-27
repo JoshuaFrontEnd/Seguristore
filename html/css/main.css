@@ -4,8 +4,9 @@
 
 html{
     font-family: 'Hind', sans-serif;
-/*     min-width: 320px; */
     width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
     font-size: 16px;
 }
 
@@ -15,8 +16,6 @@ body{
 }
 
 html, body{
-    min-width: 320px;
-    overflow-x: hidden;
     height: 100%;
     min-height: 500px;
     margin: 0;
