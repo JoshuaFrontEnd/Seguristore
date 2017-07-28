@@ -31,7 +31,6 @@ p{
 }
 
 /*--- HEADER ---*/
-
 .mainHeader{
     position: fixed;
     top: 0;
@@ -61,17 +60,6 @@ p{
     background: #ffc229;
 }
 
-/*.headerBgBottom:after{
-    content: '';
-    width: 100%;
-    position: absolute;
-    bottom: -20px;
-    background-image: repeating-linear-gradient(-45deg, rgba(0,0,0,1), rgba(0,0,0,1) 25px, rgba(255,194,41,1) 25px, rgba(255,194,41,1) 50px);
-    height: 20px;
-    border: 1px solid black;
-}
-*/
-
 .mainHeader_logo_imgLogo{
     width: 70px;
     margin: 20px;
@@ -82,7 +70,6 @@ p{
     float:left;
     margin: 42px 0 0 0;
     color: #074a8e;
-    /* text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2); */
 }
 
 .mainHeader_nav{
@@ -96,11 +83,6 @@ p{
     float: left;
     will-change: color;
     transition: color .3s cubic-bezier(0.22, 0.61, 0.36, 1);
-/*         text-transform: uppercase;
-        font-size: 14px;
-        font-weight: bold; */
-/*         letter-spacing: -0.5px; */
-    /*     text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2); */
 }
 
 .mainHeader_nav a:hover{
@@ -119,10 +101,7 @@ p{
 }
 
 /*--- BANNER ---*/
-
 .mainBanner{
-    overflow: hidden;
-    position: relative;
     z-index: 8;
     width: 100%;
     height: 100%;
@@ -140,11 +119,8 @@ p{
 }
 
 .mainBanner_title{
-    font-size: 7vw;
-    /*     height: 30vh !important; */
-    /*     width: auto !important; */
-    /*     height: auto !important; */
     left: 50%;
+    font-size: 7vw;
     margin: 0.7vw auto;
 }
 
@@ -154,7 +130,6 @@ p{
 
 .buttonContact{
     margin: 2vw auto !important;
-/*     display: table; */
 }
 
 .buttonArrow{
@@ -190,66 +165,54 @@ p{
 }
 
 /*--- NOSOTROS ---*/
-.nosotros{
+/*.nosotros{
     background: url(../img/bgNosotros.jpg) no-repeat fixed;
     background-size: cover;
-}
+}*/
 
 .nosotros_contVideo{
-    width: 100%;
+    width: 50%;
     overflow: hidden;
+
     /*background: red;*/
 }
 
 .nosotros_contVideo_video{
-    width: 560px;
-    height: 310px;
+    width: 552px;
+    height: 312px;
     margin: 100px auto;
     display: block;
     border: 0;
 }
 
 .nosotros_contBox{
-    text-align: center;
+    width: 50%;
+    overflow: hidden;
+/*    text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: center;*/
+
+    /*background: green;*/
 }
 
 .nosotros_contBox_box{
-    max-width: 340px;
+    /*max-width: 340px;*/
     width: 100%;
-    display: inline-block;
     overflow: hidden;
-    background: #ffc229;
-    /* background: #fff; */
-    margin: 0 2% 100px;
-    /* height: auto; */
-    /* display: flex; */
-}
-
-.nosotros_contBox_box p{/* color: #fff; *//* color: #333; *//*
-color: #074a8e; *//*
-color: orangered;*/}
-
-.nosotros_contBox_boxImg{
-    width: 100%;
-    height: auto;
+    /*border: 1px dashed #ffc229;*/
+    /*margin: 0 2% 100px;*/
 }
 
 .nosotros_contBox_boxTitle{
-    text-align: center;
+    /*text-align: center;*/
     font-size: 1.5em;
     font-weight: bold;
-/*     color: #333; */
     color: #074a8e;
-    /* color: #1f9b05; */
-    /* color: #ffc229; */
-/*     color: #fff !important; */
 }
 
 .nosotros_contBox_boxTxt{
-    text-align: center;
-    margin: 1.5em;
+    /*text-align: center;*/
+    margin: 1.5em 0;
     color: #333;
     color: #fff;
     color: #074a8e;
@@ -258,13 +221,8 @@ color: orangered;*/}
 
 /*--- PRODUCTOS ---*/
 .cont_productos{
-    max-width: 1260px;
-    margin: auto;
     overflow: hidden;
     text-align: center;
-
-    /*background: #333;*/
-/*     background: red; */
 }
 
 .producto{
@@ -356,18 +314,11 @@ color: orangered;*/}
     font-weight: bold;
     font-size: 1.5em;
     line-height: 1;
-    /* padding: 15px 0; */
     width: 80%;
     text-transform: uppercase;
 }
 
 /*--- FOOTER ---*/
-.mainFooter{
-    position: relative;
-    overflow: hidden;
-    padding-top: 200px;
-}
-
 .mainFooter_title{
     font-size: 2em;
     font-weight: bold;
@@ -378,22 +329,16 @@ color: orangered;*/}
 }
 
 .wrapperFooter{
-    margin: auto;
+    margin: 80px auto;
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
     overflow: hidden;
-/*     flex-direction: row; */
-    /*     border: 1px dashed blue;
-    background: green; */
 }
 
 .contactForm{
     width: 100%;
     max-width: 680px;
-    margin: 40px 0 88px;
-/*     border: 1px solid green; */
-/*     background: mediumturquoise; */
     position: relative;
 }
 
@@ -407,9 +352,6 @@ color: orangered;*/}
     left: 0;
     pointer-events: none;
     text-align: center;
-
-    /*background: orangered;*/
-    /*display: none;*/
 }
 
 .inputForm, .textareaForm{
@@ -423,7 +365,6 @@ color: orangered;*/}
     font-size: 16px;
     resize: none;
     color: #074a8e;
-    /* border-radius: 3px; */
 }
 
 /*-- Remover color autocompletado Chrome --*/
@@ -463,7 +404,6 @@ input:-webkit-autofill {
 
 .formInfo{
     min-width: 425px;
-    margin: 94px 0;
 }
 
 .boxInfo_titles{
@@ -484,27 +424,11 @@ input:-webkit-autofill {
     font-size: 1.125em;
 }
 
-/*.formInfo-p{
-    margin: 0 0;
-     letter-spacing: 0.5px;
-}*/
-
-/*.formInfoLista{
-    list-style-type: none;
-    padding: 0;
-}
-
-.formInfoLista.inline li{
-    display: inline-block;
-}*/
-
 .columnForm{
     padding: 0 2%;
     color: #074a8e;
     /* border: 1px dashed orangered; */
 }
-
-
 
 .box_yellow{
     padding: 100px 0;
@@ -512,11 +436,6 @@ input:-webkit-autofill {
     position: relative;
     background: #ffc229;
 }
-
-/*.mainFooter-info p{
-    color: #333;
-    margin: 40px auto 0;
-}*/
 
 /*--- ICONS ---*/
 .icons{
@@ -575,19 +494,8 @@ input:-webkit-autofill {
     margin: auto;
 }
 
-/*.textCenter{
-    text-align: center;
-}*/
-
 .currentNav{
     cursor: default;
-}
-
-.wrapper{
-    width: 100%;
-    /* min-width: 320px; */
-    margin: 0 auto;
-    position: relative;
 }
 
 .replaceColorNav{
@@ -619,13 +527,9 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav{
     opacity: 1;
 }
 
-
-
 .error{
     border: 4px solid red;
 }
-
-
 
 .stripes, .stripes_up:before, .stripes_down:after{
     content: '';
@@ -649,6 +553,16 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav{
     bottom: 0;
 }
 
+.wrapper{
+    position: relative;
+    overflow: hidden;
+    padding-top: 200px;
+}
+
+.wrapper1260{
+    max-width: 1260px;
+    margin: auto;
+}
 
 /*-- develop --*/
 
@@ -941,5 +855,3 @@ h2,h3{
     margin: 0 10%;
     width: 80%;
 }
-
-
