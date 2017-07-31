@@ -7,6 +7,7 @@ html{
     width: 100%;
     min-width: 320px;
     overflow-x: hidden;
+    overflow-y: hidden;
     font-size: 16px;
 }
 
@@ -294,6 +295,25 @@ p{
     line-height: 1;
     width: 80%;
     text-transform: uppercase;
+}
+
+.productos_infoTxt{
+    text-align: center;
+    font-size: 1.8em;
+/*     border-top: 8px solid #074a8e; */
+/*     border-bottom: 5px solid #074a8e; */
+    padding: 2em;
+}
+
+.productos_infoTxt_dest{
+    text-transform: capitalize;
+    font-size: 2em;
+}
+
+.productos_infoTxt_bold{
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.5;
 }
 
 /*--- FOOTER ---*/
@@ -597,6 +617,8 @@ h2,h3{
         z-index: 2;
         top: 0;
         left: 0;
+
+        /*border-color: #e9ebee transparent transparent transparent;*/
     }
 
     .cont_productos:after{
@@ -608,15 +630,13 @@ h2,h3{
         z-index: 2;
         top: -7px;
         right: 0;
+
+        /*border-color: transparent transparent #e9ebee transparent;*/
     }
 
 }
 
 @media ( max-width: 1024px ){
-
-    .mainFooter_title{
-        transform: translateX(0);
-    }
 
     .formInfo{
         margin: auto;
@@ -633,6 +653,7 @@ h2,h3{
 
     .wrapperFooter{
         flex-direction: column;
+        margin: auto;
     }
 
 }
@@ -804,9 +825,9 @@ h2,h3{
         background: #ffc229;
     }
 
-}
-
-@media ( max-width: 450px ){
+    .mainFooter_title{
+        font-size: 1.6em;
+    }
 
     .formInfo{
         min-width: 100%;
@@ -839,3 +860,26 @@ h2,h3{
     margin: 0 10%;
     width: 80%;
 }
+
+
+/* Big Triangle */
+svg#bigTriangleColor {
+    pointer-events: none;
+}
+
+#bigTriangleColor path {
+    fill: #3498db;
+    stroke: #3498db;
+    stroke-width: 2;
+}
+
+
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #333 url('http://files.mimoymima.com/images/loading.gif') no-repeat center center; }

@@ -300,3 +300,13 @@ $('.cont_productos').slick({
     }
   ]
 });
+
+
+$(window).on('load',function(){
+
+    setTimeout(()=>{
+        $('#preloader').fadeOut();
+        $('html').css('overflow-y', 'auto');
+    },3000);
+
+});
