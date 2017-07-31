@@ -120,7 +120,7 @@ p{
 
 .mainBanner_title{
     left: 50%;
-    font-size: 7vw;
+    font-size: 6vw;
     margin: 0.7vw auto;
 }
 
@@ -132,7 +132,7 @@ p{
     margin: 2vw auto !important;
 }
 
-.buttonArrow{
+.buttonArrow, .slick-prev, .slick-next{
     text-indent: -9999px;
     width: 34px;
     height: 34px;
@@ -148,7 +148,7 @@ p{
     animation: flotar 2s ease-in-out infinite;
 }
 
-.buttonArrow:hover{
+.buttonArrow:hover, .slick-prev, .slick-next{
     background: #ffc229 url(../img/bgButtonArrow.png) no-repeat 0px 2px;
 }
 
@@ -165,58 +165,7 @@ p{
 }
 
 /*--- NOSOTROS ---*/
-/*.nosotros{
-    background: url(../img/bgNosotros.jpg) no-repeat fixed;
-    background-size: cover;
-}*/
 
-.nosotros_contVideo{
-    width: 50%;
-    overflow: hidden;
-
-    /*background: red;*/
-}
-
-.nosotros_contVideo_video{
-    width: 552px;
-    height: 312px;
-    margin: 100px auto;
-    display: block;
-    border: 0;
-}
-
-.nosotros_contBox{
-    width: 50%;
-    overflow: hidden;
-/*    text-align: center;
-    display: flex;
-    justify-content: center;*/
-
-    /*background: green;*/
-}
-
-.nosotros_contBox_box{
-    /*max-width: 340px;*/
-    width: 100%;
-    overflow: hidden;
-    /*border: 1px dashed #ffc229;*/
-    /*margin: 0 2% 100px;*/
-}
-
-.nosotros_contBox_boxTitle{
-    /*text-align: center;*/
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #074a8e;
-}
-
-.nosotros_contBox_boxTxt{
-    /*text-align: center;*/
-    margin: 1.5em 0;
-    color: #333;
-    color: #fff;
-    color: #074a8e;
-}
 
 
 /*--- PRODUCTOS ---*/
@@ -225,13 +174,36 @@ p{
     text-align: center;
 }
 
+.cont_productos .slick-prev, .cont_productos .slick-next{
+    top: 50%;
+    left: initial;
+    margin: -17px 23px 0;
+    bottom: initial;
+    border: 0;
+    background-color: #074a8e;
+    animation: none;
+    z-index: 3;
+    cursor:  pointer;
+    border-radius: 3px;
+}
+
+.cont_productos .slick-prev{
+    left: 0;
+    transform: rotate(90deg);
+}
+
+.cont_productos .slick-next{
+    right: 0;
+    transform: rotate(-90deg);
+}
+
 .producto{
     width: 237px;
     height: 288px;
     text-align: center;
     margin: 0 -5px -5px 0;
     position: relative;
-     transform: skewX(-15deg);
+    transform: skewX(-15deg);
     cursor: default;
     display: inline-block;
     background: red;
@@ -240,11 +212,17 @@ p{
 .producto:nth-child(odd){
     background: #ffc229;
     color: #333;
+
+    background: #333;
+    color: #ffc229;
 }
 
 .producto:nth-child(even){
     background: #333;
     color: #ffc229;
+
+    background: #ffc229;
+    color: #333;
 }
 
 .producto_img{
@@ -312,7 +290,7 @@ p{
     left: 50%;
     transform: perspective(1px) translateX(-50%) skewX(15deg);
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.3em;
     line-height: 1;
     width: 80%;
     text-transform: uppercase;
@@ -323,9 +301,14 @@ p{
     font-size: 2em;
     font-weight: bold;
     margin: 15px 0 0;
-    transform: translateX(-302px);
+    line-height: .9em;
     text-align: center;
     text-transform: uppercase;
+}
+
+.mainFooter_title span{
+    font-weight: normal;
+    font-size: .5em;
 }
 
 .wrapperFooter{
@@ -404,6 +387,7 @@ input:-webkit-autofill {
 
 .formInfo{
     min-width: 425px;
+    margin-top: 10px;
 }
 
 .boxInfo_titles{
@@ -602,7 +586,7 @@ h2,h3{
 
 /*-- MEDIA QUERIES --*/
 
-@media ( min-width: 1280px ){
+@media ( min-width: 1281px ){
 
     .cont_productos:before{
         content: '';
@@ -611,18 +595,18 @@ h2,h3{
         border-color: #FFF transparent transparent transparent;
         position: absolute;
         z-index: 2;
-        top: 21px;
+        top: 0;
         left: 0;
     }
 
     .cont_productos:after{
         content: '';
         border-style: solid;
-        border-width: 0 0 292px 80px;
+        border-width: 0 0 290px 78px;
         border-color: transparent transparent #fff transparent;
         position: absolute;
         z-index: 2;
-        top: 15px;
+        top: -7px;
         right: 0;
     }
 
