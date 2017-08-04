@@ -302,11 +302,11 @@ $('.cont_productos').slick({
 });
 
 
-$(window).on('load',function(){
+// $(window).on('load',function(){
 
-    setTimeout(()=>{
-        $('#preloader').fadeOut();
-        $('html').css('overflow-y', 'auto');
-    },3000);
+//     setTimeout(()=>{
+//         $('#preloader').fadeOut();
+//         $('html').css('overflow-y', 'auto');
+//     },3000);
 
-});
+// });
