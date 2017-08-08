@@ -68,8 +68,10 @@ p {
 }
 
 .mainHeader_logo_title {
-    float: left;
     margin: 42px 0 0 0;
+    font-size: 2em;
+    font-weight: bold;
+    float: left;
     color: #074a8e;
 }
 
@@ -110,18 +112,20 @@ p {
     background-size: cover;
 }
 
-.mainBanner p {
+.mainBanner span {
     margin: 0;
-    color: #fff
+    color: #fff;
+    display: block;
 }
 
 .mainBanner_welcome {
     font-size: 2vw;
 }
 
-.mainBanner_title {
+span.mainBanner_title {
     left: 50%;
     font-size: 6vw;
+    font-weight: bold;
     margin: 0.7vw auto;
 }
 
@@ -131,6 +135,10 @@ p {
 
 .buttonContact {
     margin: 2vw auto !important;
+}
+
+.buttonContact span{
+    display: table; /*-----------------------------  REVISAR REVISAR REVISAR REVISAR REVISAR REVISAR REVISAR REVISAR------------------------------------------*/
 }
 
 .buttonArrow, .slick-prev, .slick-next {
@@ -167,7 +175,36 @@ p {
     }
 }
 
+
+/*--- TITLES ---*/
+.main_title_section{
+    font-weight: normal;
+    margin: 0 auto;
+}
+
+.sub_title_section {
+    font-size: 2em;
+    margin: 15px 0 0;
+    line-height: .9em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #074a8e;
+}
+
+.sub_title_section span {
+    font-weight: normal;
+    font-size: .5em;
+}
+
+
 /*--- NOSOTROS ---*/
+
+
+
+
+
+
+
 /*--- PRODUCTOS ---*/
 .cont_productos {
     overflow: hidden;
@@ -331,20 +368,6 @@ p {
 }
 
 /*--- FOOTER ---*/
-.mainFooter_title {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 15px 0 0;
-    line-height: .9em;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.mainFooter_title span {
-    font-weight: normal;
-    font-size: .5em;
-}
-
 .wrapperFooter {
     margin: 80px auto;
     display: flex;
@@ -758,7 +781,7 @@ h2,h3 {
         font-size: 1.1em;
     }
 
-    .mainBanner_title {
+    span.mainBanner_title {
         font-size: 3.35em;
     }
 
