@@ -216,6 +216,7 @@ span.mainBanner_title {
     /*     border: 2px dashed orangered; */
     /*     margin: 150px 40px 0; */
     margin: 0 40px 60px;
+/*     text-align: center; */
 }
 
 .box_info_mundi {
@@ -339,6 +340,12 @@ span.mainBanner_title {
     pointer-events: none;
 }
 
+.producto_txt ul{
+/*     background: red; */
+    display: table;
+    margin: auto;
+}
+
 .producto_txt li:before {
     content: "» ";
     color: inherit;
@@ -350,11 +357,14 @@ span.mainBanner_title {
 .producto_txt li {
     position: relative;
     padding-left: 15px;
-    margin: 0 0 10px 40px;
+/*     margin: 0 0 10px 40px; */
+/*     margin: 0 auto 10px; */
+    margin-bottom: 10px;
     pointer-events: auto;
     opacity: 0;
     transform: perspective(1px) translateX(-20px) skewX(15deg);
     transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
+/*     background: yellow; */
 }
 
 .producto:hover .producto_txt_hover {
@@ -457,7 +467,7 @@ input:-webkit-autofill {
 }
 
 .formInfo {
-    min-width: 425px;
+    min-width: 450px;
     margin-top: 10px;
 }
 
@@ -891,6 +901,20 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
 }
 
 @media ( max-width: 484px ) {
+
+    .box_info_mundi {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .box_infoTxt_dest {
+        font-size: 1em;
+    }
+
+    .box_info_ul li {
+        font-size: 1.2em;
+    }
+
     .producto_bg_484 {
         display: block;
     }
@@ -954,5 +978,6 @@ svg#bigTriangleColor {
     width: 100%;
     height: 100%;
     overflow: visible;
-    background: #333 url('http://files.mimoymima.com/images/loading.gif') no-repeat center center;
+    background: #fff url('../img/loading.gif') no-repeat center center;
+    /*background: #fdc823 url('../img/loading.gif') no-repeat center center;*/
 }

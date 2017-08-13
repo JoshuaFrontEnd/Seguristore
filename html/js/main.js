@@ -299,7 +299,7 @@ $('.cont_productos').slick({
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 530,
       settings: {
         slidesToShow: 1
       }
