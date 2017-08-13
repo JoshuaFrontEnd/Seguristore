@@ -216,6 +216,7 @@ span.mainBanner_title {
     /*     border: 2px dashed orangered; */
     /*     margin: 150px 40px 0; */
     margin: 0 40px 60px;
+    margin: 0 40px;
 /*     text-align: center; */
 }
 
@@ -260,7 +261,7 @@ span.mainBanner_title {
 .cont_productos {
     overflow: hidden;
     text-align: center;
-    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .cont_productos .slick-prev, .cont_productos .slick-next {
@@ -467,7 +468,7 @@ input:-webkit-autofill {
 }
 
 .formInfo {
-    min-width: 450px;
+    min-width: 470px;
     margin-top: 10px;
 }
 
@@ -980,4 +981,8 @@ svg#bigTriangleColor {
     overflow: visible;
     background: #fff url('../img/loading.gif') no-repeat center center;
     /*background: #fdc823 url('../img/loading.gif') no-repeat center center;*/
+}
+
+.mb40{
+    margin-bottom: 40px;
 }
