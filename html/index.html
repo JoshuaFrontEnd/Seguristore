@@ -82,7 +82,7 @@
 
             <div class="to-down">
 
-                <a class="buttonContact button centerTable" href="#mainFooter">
+                <a class="buttonContact buttonMargin button centerTable" href="#mainFooter">
                     <span class="center centerTable buttonContact_textA">Cotiza con nosotros</span>
                     <span class="center centerTable buttonContact_textB">Contacto</span>
                 </a>
@@ -431,23 +431,35 @@
 
         <div class="wrapperFooter">
 
-            <form id="contactForm" class="contactForm columnForm" method="POST" enctype="multipart/form-data">
+            <div class="contactForm columnForm">
 
-                <input id="nombre" name="nombre" placeholder="Nombre" type="text" class="inputForm required" size="30" />
+                <form id="contactForm" class="form" method="POST" enctype="multipart/form-data">
 
-                <input id="email" name="email" placeholder="Email" type="text" class="inputForm required" size="30"/>
+                    <input id="nombre" name="nombre" placeholder="Nombre" type="text" class="inputForm required" size="30" />
 
-                <textarea id="" name="mensaje" placeholder="Mensaje" class="textareaForm required" cols="30" rows="10"></textarea>
+                    <input id="email" name="email" placeholder="Email" type="text" class="inputForm required" size="30"/>
 
-                <input id="btnSubmit" type="submit" value="Enviar" title="Enviar" class="button btn-form inputForm" />
+                    <textarea id="" name="mensaje" placeholder="Mensaje" class="textareaForm required" cols="30" rows="10"></textarea>
+
+                    <!-- <input id="btnSubmit" type="submit" value="Enviar" title="Enviar" class="button btn-form inputForm" /> -->
+
+                    <a id="btnSubmit" class="buttonContact button centerTable btn-form" href="#mainFooter">
+                        <span class="center centerTable buttonContact_textA">Enviar</span>
+                    </a>
+
+                </form>
 
                 <div class="contactForm_gracias">
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil officiis, facilis fugiat quisquam eligendi nesciunt animi minima, beatae ad fugit unde dolore illo doloribus temporibus voluptatum non consectetur alias ratione.</p>
+                    <p class="contactForm_gracias_mensaje">Gracias por contactarse con nosotros, su mensaje ha sido enviado,  por lo que intentaremos responder a la brevedad.</p>
+
+                    <a class="buttonContact button centerTable" href="#mainFooter">
+                        <span class="center centerTable buttonContact_textA">Escribir otro mensaje</span>
+                    </a>
 
                 </div>
 
-            </form>
+            </div>
 
             <section class="formInfo columnForm">
 
@@ -579,7 +591,9 @@
 
             <img class="logo_proveedores" src="img/logos.png" alt="" width="715" height="72">
 
-            <p style="margin: 50px 0 0 0; color: #333; font-weight: bold; padding: 0 2%;">SeguriStore © SPA 2017 - Todos los derechos reservados</p>
+            <p class="mainFooter_copyright">
+                SeguriStore © SPA 2017 - Todos los derechos reservados <br> Desarrollado por <a href="https://www.facebook.com/etherealmind17" target="_blank">Joshua</a>
+            </p>
 
         </div>
 

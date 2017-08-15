@@ -54,6 +54,8 @@ function onScroll(){
 
     var scrollPos = $(document).scrollTop();
 
+    console.log(scrollPos);
+
     linkNav.each(function () {
 
         var currLink = $(this),
@@ -171,34 +173,34 @@ $("#btnSubmit").on('click', function (e) {
 
     //Validando que los campos no esten vacios
     //No considera si se ingresa caracteres en blanco
-    required.each(function(index, el) {
-        if($(this).val().length === 0){
+    // required.each(function(index, el) {
+    //     if($(this).val().length === 0){
 
-            $(this).addClass('error');
+    //         $(this).addClass('error');
 
-            console.log('no enviado');
-        }
-    });
+    //         console.log('no enviado');
+    //     }
+    // });
 
     //Validando Email
-    function validateEmail(email) {
-        console.log('hola');
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
+    // function validateEmail(email) {
+    //     console.log('hola');
+    //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     return re.test(email);
+    // }
 
-    if(validateEmail(email.val())){
-        email.removeClass('error');
-    }else{
-        email.addClass('error');
-    }
+    // if(validateEmail(email.val())){
+    //     email.removeClass('error');
+    // }else{
+    //     email.addClass('error');
+    // }
 
     //Si no existe la clase error se envia el formulario, limpia los campos y envia un mensaje de formulario enviado
     if (!$('.error').length) {
         console.log('enviando formulario');
 
-
-        $('.contactForm_gracias').addClass('change_opacity visible').css('pointer-events', 'initial');
+        $('.form').addClass('form_hide');
+        $('.contactForm_gracias').addClass('change_opacity pointerOpacity');
 
         setTimeout(function(){
             required.val('');
@@ -258,23 +260,19 @@ $("#btnSubmit").on('click', function (e) {
 
 $('.contactForm_gracias').on('click', function(event) {
     event.preventDefault();
-    $(this).removeClass('change_opacity visible').css('pointer-events', 'none');
+    $(this).removeClass('pointerOpacity');
+    $('.form').removeClass('form_hide');
 
 });
 
-$('#contactForm').on('keyup', '.required.error', function(){
-    $(this).removeClass('error');
+// $('#contactForm').on('keyup', '.required.error', function(){
+//     $(this).removeClass('error');
 
-    console.log('keyup');
-});
+//     console.log('keyup');
+// });
 
 
 })();
-
-
-// - Revisar las clases que cambian la opacidad
-// - Cambiar los nombres
-// - Evaluar la posibilidad de volver al commit anterior a estos cambios, pero guardar primero todo este codigo
 
 $('.cont_productos').slick({
   slidesToShow: 5,

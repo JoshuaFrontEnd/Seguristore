@@ -134,11 +134,11 @@ span.mainBanner_title {
     font-size: 1.6vw;
 }
 
-.buttonContact {
+.buttonMargin {
     margin: 2vw auto !important;
 }
 
-.buttonContact span{
+.buttonMargin span{
     display: table; /*-----------------------------  REVISAR REVISAR REVISAR REVISAR REVISAR REVISAR REVISAR REVISAR------------------------------------------*/
 }
 
@@ -205,7 +205,6 @@ span.mainBanner_title {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    /*     background: red */
 }
 
 .reverse1024{
@@ -213,11 +212,8 @@ span.mainBanner_title {
 }
 
 .box_info_column {
-    /*     border: 2px dashed orangered; */
-    /*     margin: 150px 40px 0; */
     margin: 0 40px 60px;
     margin: 0 40px;
-/*     text-align: center; */
 }
 
 .box_info_mundi {
@@ -228,8 +224,6 @@ span.mainBanner_title {
 .box_infoTxt {
     text-align: center;
     font-size: 1.8em;
-    /*     border-top: 8px solid #074a8e; */
-    /*     border-bottom: 5px solid #074a8e; */
 }
 
 .box_infoTxt_dest {
@@ -328,7 +322,6 @@ span.mainBanner_title {
 }
 
 .producto_txt {
-/*     margin: -10px 0 0 0; */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -342,7 +335,6 @@ span.mainBanner_title {
 }
 
 .producto_txt ul{
-/*     background: red; */
     display: table;
     margin: auto;
 }
@@ -358,14 +350,11 @@ span.mainBanner_title {
 .producto_txt li {
     position: relative;
     padding-left: 15px;
-/*     margin: 0 0 10px 40px; */
-/*     margin: 0 auto 10px; */
     margin-bottom: 10px;
     pointer-events: auto;
     opacity: 0;
     transform: perspective(1px) translateX(-20px) skewX(15deg);
     transition: all .5s cubic-bezier(0.22, 0.61, 0.36, 1);
-/*     background: yellow; */
 }
 
 .producto:hover .producto_txt_hover {
@@ -405,7 +394,19 @@ span.mainBanner_title {
 .contactForm {
     width: 100%;
     max-width: 680px;
+    min-height: 200px;
     position: relative;
+}
+
+.form{
+    opacity: 1;
+    max-height: 100%;
+    transition: all .2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.form_hide{
+    opacity: 0;
+    max-height: 0;
 }
 
 .contactForm_gracias {
@@ -418,6 +419,18 @@ span.mainBanner_title {
     left: 0;
     pointer-events: none;
     text-align: center;
+    margin-top: 110px;
+}
+
+.pointerOpacity{
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.contactForm_gracias_mensaje{
+    padding: 0 2%;
+    width: 100%;
+    font-size: 1.5em;
 }
 
 .inputForm, .textareaForm {
@@ -431,6 +444,17 @@ span.mainBanner_title {
     font-size: 16px;
     resize: none;
     color: #074a8e;
+}
+
+.mainFooter_copyright{
+    margin: 50px 0 0 0;
+    color: #333;
+    padding: 0 2%;
+    font-weight: bold;
+}
+
+.mainFooter_copyright a{
+    color: #333;
 }
 
 /*-- Remover color autocompletado Chrome --*/
@@ -463,7 +487,6 @@ input:-webkit-autofill {
 }
 
 .btn-form {
-    /*width: 295px;*/
     float: right;
 }
 
@@ -474,14 +497,12 @@ input:-webkit-autofill {
 
 .boxInfo_titles {
     overflow: hidden;
-    /* background: green; */
 }
 
 .boxInfo_titles_name {
     font-weight: bold;
     margin: 0 0 2px 0;
     font-size: 1.75em;
-    /*     color: #1f9b05; */
 }
 
 .boxInfo_titles_info {
@@ -492,7 +513,6 @@ input:-webkit-autofill {
 .columnForm {
     padding: 0 2%;
     color: #074a8e;
-    /* border: 1px dashed orangered; */
 }
 
 .box_yellow {
@@ -540,7 +560,6 @@ input:-webkit-autofill {
     border:2px solid #074a8e;
     transform: perspective(1px) scale(1.3);
 }
-
 
 .icon svg {
     transform: scale(1.5);
@@ -609,7 +628,6 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
 }
 
 .change_opacity {
-    will-change: opacity;
     transition: opacity .3s ease-in-out;
 }
 
@@ -715,6 +733,10 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
 
     .contactForm {
         margin: 0 auto 30px;
+    }
+
+    .contactForm_gracias {
+        margin-top: 0;
     }
 
     .btn-form {
@@ -861,7 +883,7 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
         padding-top: 70px;
     }
 
-    .buttonContact {
+    .buttonMargin {
         margin: 1em auto 1.5em !important;
     }
 
@@ -945,30 +967,11 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
     }
 }
 
-.cls-1 {
-    font-size: 42.77px;
-    fill: #074a8e;
-    font-family: Hind;
-    font-weight: 700;
-}
-
-/*PAGO DE PATENTE HASTA LAS 8:00 - 14:00 Y 15:00 HASTA 5:30*/
 .logo_proveedores {
     max-width: 715px;
     height: auto;
     margin: 0 10%;
     width: 80%;
-}
-
-/* Big Triangle */
-svg#bigTriangleColor {
-    pointer-events: none;
-}
-
-#bigTriangleColor path {
-    fill: #3498db;
-    stroke: #3498db;
-    stroke-width: 2;
 }
 
 #preloader {
