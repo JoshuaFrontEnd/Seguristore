@@ -7,8 +7,8 @@ html {
     width: 100%;
     min-width: 320px;
     font-size: 16px;
-/*        overflow-x: hidden;
-    overflow-y: hidden;*/
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 html, body {
@@ -495,6 +495,11 @@ input:-webkit-autofill {
     margin-top: 10px;
 }
 
+footer .icon_link{
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
 .boxInfo_titles {
     overflow: hidden;
 }
@@ -506,7 +511,7 @@ input:-webkit-autofill {
 }
 
 .boxInfo_titles_info {
-    margin: 0 0 40px 0;
+    margin: 0;
     font-size: 1.125em;
 }
 
@@ -871,6 +876,10 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
         margin: 40px 40px 0;
     }
 
+    footer .icon_link{
+        display: block;
+    }
+
     .box_info_column {
         margin: 0 40px;
     }
@@ -974,7 +983,7 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
     width: 80%;
 }
 
-#preloader {
+.preloader {
     position: fixed;
     left: 0;
     top: 0;
@@ -982,8 +991,15 @@ a.replaceColorNav:hover, a.replaceColorNav.activeNav {
     width: 100%;
     height: 100%;
     overflow: visible;
-    background: #fff url('../img/loading.gif') no-repeat center center;
+    background: #fff;
+    background: #fff url('../img/bg_preloader.png') no-repeat center center;
     /*background: #fdc823 url('../img/loading.gif') no-repeat center center;*/
+}
+
+.preloader_bar{
+    width: 168px;
+    margin-top: 103px;
+/*     border:1px dashed red; */
 }
 
 .mb40{

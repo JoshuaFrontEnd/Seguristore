@@ -4,14 +4,6 @@ var mainBannerH = $('.mainBanner').outerHeight(),
     mainHeaderNav = $('.mainHeader_nav'),
     linkNav = mainHeaderNav.find('a[href^="#"]');
 
-
-// $('<img/>').attr('src', '../img/bgMainBanner2.jpg').on('load', function() {
-//    $(this).remove(); // prevent memory leaks as @benweet suggested
-//    $('.mainBanner').css('background', 'url(../img/bgMainBanner2.jpg) bottom no-repeat');
-//    $('body').css('display', 'block');;
-// });
-
-
 function anclaSolo(boton,activar){
 
     boton.on('click', function(e) {
@@ -141,135 +133,143 @@ var resizeOn = function(){
 
 $(window).on('load resize', resizeOn);
 
-// Boton menu movil
-$('.menu_toggle').on('click', function(){
-    console.log('abrete sesamo');
+    // Boton menu movil
+    $('.menu_toggle').on('click', function(){
+        console.log('abrete sesamo');
 
-    $('.menu_toggle_hamburger').toggleClass('hidden');
-    $('.buttonContact_textA').toggleClass('hidden');
-    $('.buttonContact_textB').toggleClass('show_on');
-    $('.menu_toggle_cross').toggleClass('rotate45');
-    $('.mainHeader_nav, .hide_on').toggleClass('show_on');
-    $('.to-up').toggleClass('up-65');
-    $('.to-down').toggleClass('down-76');
-
-
-    // $('.menu_toggle_hamburger').toggleClass('hide_on');
-    // $('.mainHeader_nav, .menu_toggle_hide').toggleClass('show_on');
-    // $('.menu_toggle_cross').toggleClass('rotate45');
-    // $('.to-up').toggleClass('up-65');
-    // $('.to-down').toggleClass('down-76');
-
-});
+        $('.menu_toggle_hamburger').toggleClass('hidden');
+        $('.buttonContact_textA').toggleClass('hidden');
+        $('.buttonContact_textB').toggleClass('show_on');
+        $('.menu_toggle_cross').toggleClass('rotate45');
+        $('.mainHeader_nav, .hide_on').toggleClass('show_on');
+        $('.to-up').toggleClass('up-65');
+        $('.to-down').toggleClass('down-76');
 
 
-// VALIDACION FORMULARIO
-var required = $('.required'),
-    nombre = $('#nombre'),
-    email = $('#email');
+        // $('.menu_toggle_hamburger').toggleClass('hide_on');
+        // $('.mainHeader_nav, .menu_toggle_hide').toggleClass('show_on');
+        // $('.menu_toggle_cross').toggleClass('rotate45');
+        // $('.to-up').toggleClass('up-65');
+        // $('.to-down').toggleClass('down-76');
 
-$("#btnSubmit").on('click', function (e) {
-    e.preventDefault();
-
-    //Validando que los campos no esten vacios
-    //No considera si se ingresa caracteres en blanco
-    // required.each(function(index, el) {
-    //     if($(this).val().length === 0){
-
-    //         $(this).addClass('error');
-
-    //         console.log('no enviado');
-    //     }
-    // });
-
-    //Validando Email
-    // function validateEmail(email) {
-    //     console.log('hola');
-    //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //     return re.test(email);
-    // }
-
-    // if(validateEmail(email.val())){
-    //     email.removeClass('error');
-    // }else{
-    //     email.addClass('error');
-    // }
-
-    //Si no existe la clase error se envia el formulario, limpia los campos y envia un mensaje de formulario enviado
-    if (!$('.error').length) {
-        console.log('enviando formulario');
-
-        $('.form').addClass('form_hide');
-        $('.contactForm_gracias').addClass('change_opacity pointerOpacity');
-
-        setTimeout(function(){
-            required.val('');
-        }, 500);
+    });
 
 
-        // DESACTIVAR BOTON DE ENVIO REVISAR IGUAL
-    }
+    // VALIDACION FORMULARIO
+    var required = $('.required'),
+        nombre = $('#nombre'),
+        email = $('#email');
 
-    // else{
+    $("#btnSubmit").on('click', function (e) {
+        e.preventDefault();
 
-    //     required.removeClass('error');
+        //Validando que los campos no esten vacios
+        //No considera si se ingresa caracteres en blanco
+        required.each(function(index, el) {
+            if($(this).val().length === 0){
 
-    //     console.log('enviando');
-    // }
+                $(this).addClass('error');
 
-    // // Funcion AJAX que hace el envio de los datos hacia el PHP
+                console.log('no enviado');
+            }
+        });
 
-    // // Get form
-    // var form = $('#contactForm')[0];
+        //Validando Email
+        function validateEmail(email) {
+            console.log('hola');
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
 
-    // // Create an FormData object
-    // var data = new FormData(form);
+        if(validateEmail(email.val())){
+            email.removeClass('error');
+        }else{
+            email.addClass('error');
+        }
 
-    // // If you want to add an extra field for the FormData
-    // // data.append("CustomField", "This is some extra data, testing");
+        //Si no existe la clase error se envia el formulario, limpia los campos y envia un mensaje de formulario enviado
+        if (!$('.error').length) {
+            console.log('enviar formulario');
 
-    // // disabled the submit button
-    // // $("#btnSubmit").prop("disabled", true);
+            sendMail();
 
-    // $.ajax({
-    //     type: "POST",
-    //     enctype: 'multipart/form-data',
-    //     url: "contacto.php",
-    //     data: data,
-    //     processData: false,
-    //     contentType: false,
-    //     cache: false,
-    //     timeout: 600000,
-    //     success: function (data) {
+            $('.form').addClass('form_hide');
+            $('.contactForm_gracias').addClass('change_opacity pointerOpacity');
 
-    //     // $("#result").text(data);
-    //     console.log("SUCCESS : ", data);
-    //     $("#btnSubmit").prop("disabled", false);
+            setTimeout(function(){
+                required.val('');
+            }, 500);
 
-    //     },
-    //     error: function (e) {
 
-    //         // $("#result").text(e.responseText);
-    //         console.log("ERROR : ", e);
-    //         $("#btnSubmit").prop("disabled", false);
+            // DESACTIVAR BOTON DE ENVIO REVISAR IGUAL
+        }else{
 
-    //     }
-    // });
+            console.log('no enviar formulario');
 
-});
+            // required.removeClass('error');
 
-$('.contactForm_gracias').on('click', function(event) {
-    event.preventDefault();
-    $(this).removeClass('pointerOpacity');
-    $('.form').removeClass('form_hide');
+            // console.log('enviando');
 
-});
+        }
 
-// $('#contactForm').on('keyup', '.required.error', function(){
-//     $(this).removeClass('error');
 
-//     console.log('keyup');
-// });
+        function  sendMail() {
+            // // Funcion AJAX que hace el envio de los datos hacia el PHP
+
+            console.log('sendmail');
+
+            // // Get form
+            var form = $('#contactForm')[0];
+
+            // // Create an FormData object
+            var data = new FormData(form);
+
+            // // If you want to add an extra field for the FormData
+            // data.append("CustomField", "This is some extra data, testing");
+
+            // // disabled the submit button
+            $("#btnSubmit").prop("disabled", true);
+
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "contacto.php",
+                data: data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 600000,
+                success: function (data) {
+
+                // $("#result").text(data);
+                console.log("SUCCESS : ", data);
+                $("#btnSubmit").prop("disabled", false);
+
+                },
+                error: function (e) {
+
+                    // $("#result").text(e.responseText);
+                    console.log("ERROR : ", e);
+                    $("#btnSubmit").prop("disabled", false);
+
+                }
+            });
+        }
+
+    });
+
+    $('.contactForm_gracias').on('click', function(event) {
+        event.preventDefault();
+        $(this).removeClass('pointerOpacity');
+        $('.form').removeClass('form_hide');
+
+    });
+
+    $('#contactForm').on('keyup', '.required.error', function(){
+        $(this).removeClass('error');
+
+        console.log('keyup');
+    });
 
 
 })();
@@ -306,11 +306,11 @@ $('.cont_productos').slick({
 });
 
 
-// $(window).on('load',function(){
+$(window).on('load',function(){
 
-//     setTimeout(()=>{
-//         $('#preloader').fadeOut();
-//         $('html').css('overflow-y', 'auto');
-//     },3000);
+    setTimeout(()=>{
+        $('#preloader').fadeOut();
+        $('html').css('overflow-y', 'auto');
+    },3000);
 
-// });
+});
